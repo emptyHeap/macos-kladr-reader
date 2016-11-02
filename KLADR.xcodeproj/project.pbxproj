@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		008922321DC9E8CA008CC7A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 008922311DC9E8CA008CC7A0 /* AppDelegate.m */; };
+		008922351DC9E8CA008CC7A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 008922341DC9E8CA008CC7A0 /* main.m */; };
+		008922371DC9E8CA008CC7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008922361DC9E8CA008CC7A0 /* Assets.xcassets */; };
+		0089223A1DC9E8CA008CC7A0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008922381DC9E8CA008CC7A0 /* MainMenu.xib */; };
+		008922451DC9E8CB008CC7A0 /* KLADRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 008922441DC9E8CB008CC7A0 /* KLADRTests.m */; };
+		008922501DC9E8CB008CC7A0 /* KLADRUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0089224F1DC9E8CB008CC7A0 /* KLADRUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		008922411DC9E8CB008CC7A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 008922251DC9E8C9008CC7A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0089222C1DC9E8CA008CC7A0;
+			remoteInfo = KLADR;
+		};
+		0089224C1DC9E8CB008CC7A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 008922251DC9E8C9008CC7A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0089222C1DC9E8CA008CC7A0;
+			remoteInfo = KLADR;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0089222D1DC9E8CA008CC7A0 /* KLADR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLADR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		008922301DC9E8CA008CC7A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		008922311DC9E8CA008CC7A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		008922341DC9E8CA008CC7A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		008922361DC9E8CA008CC7A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		008922391DC9E8CA008CC7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0089223B1DC9E8CA008CC7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		008922401DC9E8CB008CC7A0 /* KLADRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KLADRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		008922441DC9E8CB008CC7A0 /* KLADRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLADRTests.m; sourceTree = "<group>"; };
+		008922461DC9E8CB008CC7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0089224B1DC9E8CB008CC7A0 /* KLADRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KLADRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0089224F1DC9E8CB008CC7A0 /* KLADRUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLADRUITests.m; sourceTree = "<group>"; };
+		008922511DC9E8CB008CC7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0089222A1DC9E8CA008CC7A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0089223D1DC9E8CB008CC7A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		008922481DC9E8CB008CC7A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		008922241DC9E8C9008CC7A0 = {
+			isa = PBXGroup;
+			children = (
+				0089222F1DC9E8CA008CC7A0 /* KLADR */,
+				008922431DC9E8CB008CC7A0 /* KLADRTests */,
+				0089224E1DC9E8CB008CC7A0 /* KLADRUITests */,
+				0089222E1DC9E8CA008CC7A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0089222E1DC9E8CA008CC7A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0089222D1DC9E8CA008CC7A0 /* KLADR.app */,
+				008922401DC9E8CB008CC7A0 /* KLADRTests.xctest */,
+				0089224B1DC9E8CB008CC7A0 /* KLADRUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0089222F1DC9E8CA008CC7A0 /* KLADR */ = {
+			isa = PBXGroup;
+			children = (
+				008922301DC9E8CA008CC7A0 /* AppDelegate.h */,
+				008922311DC9E8CA008CC7A0 /* AppDelegate.m */,
+				008922361DC9E8CA008CC7A0 /* Assets.xcassets */,
+				008922381DC9E8CA008CC7A0 /* MainMenu.xib */,
+				0089223B1DC9E8CA008CC7A0 /* Info.plist */,
+				008922331DC9E8CA008CC7A0 /* Supporting Files */,
+			);
+			path = KLADR;
+			sourceTree = "<group>";
+		};
+		008922331DC9E8CA008CC7A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				008922341DC9E8CA008CC7A0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		008922431DC9E8CB008CC7A0 /* KLADRTests */ = {
+			isa = PBXGroup;
+			children = (
+				008922441DC9E8CB008CC7A0 /* KLADRTests.m */,
+				008922461DC9E8CB008CC7A0 /* Info.plist */,
+			);
+			path = KLADRTests;
+			sourceTree = "<group>";
+		};
+		0089224E1DC9E8CB008CC7A0 /* KLADRUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0089224F1DC9E8CB008CC7A0 /* KLADRUITests.m */,
+				008922511DC9E8CB008CC7A0 /* Info.plist */,
+			);
+			path = KLADRUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0089222C1DC9E8CA008CC7A0 /* KLADR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 008922541DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADR" */;
+			buildPhases = (
+				008922291DC9E8CA008CC7A0 /* Sources */,
+				0089222A1DC9E8CA008CC7A0 /* Frameworks */,
+				0089222B1DC9E8CA008CC7A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KLADR;
+			productName = KLADR;
+			productReference = 0089222D1DC9E8CA008CC7A0 /* KLADR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0089223F1DC9E8CB008CC7A0 /* KLADRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 008922571DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADRTests" */;
+			buildPhases = (
+				0089223C1DC9E8CB008CC7A0 /* Sources */,
+				0089223D1DC9E8CB008CC7A0 /* Frameworks */,
+				0089223E1DC9E8CB008CC7A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				008922421DC9E8CB008CC7A0 /* PBXTargetDependency */,
+			);
+			name = KLADRTests;
+			productName = KLADRTests;
+			productReference = 008922401DC9E8CB008CC7A0 /* KLADRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0089224A1DC9E8CB008CC7A0 /* KLADRUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0089225A1DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADRUITests" */;
+			buildPhases = (
+				008922471DC9E8CB008CC7A0 /* Sources */,
+				008922481DC9E8CB008CC7A0 /* Frameworks */,
+				008922491DC9E8CB008CC7A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0089224D1DC9E8CB008CC7A0 /* PBXTargetDependency */,
+			);
+			name = KLADRUITests;
+			productName = KLADRUITests;
+			productReference = 0089224B1DC9E8CB008CC7A0 /* KLADRUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		008922251DC9E8C9008CC7A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Konstantin;
+				TargetAttributes = {
+					0089222C1DC9E8CA008CC7A0 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					0089223F1DC9E8CB008CC7A0 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0089222C1DC9E8CA008CC7A0;
+					};
+					0089224A1DC9E8CB008CC7A0 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0089222C1DC9E8CA008CC7A0;
+					};
+				};
+			};
+			buildConfigurationList = 008922281DC9E8C9008CC7A0 /* Build configuration list for PBXProject "KLADR" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 008922241DC9E8C9008CC7A0;
+			productRefGroup = 0089222E1DC9E8CA008CC7A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0089222C1DC9E8CA008CC7A0 /* KLADR */,
+				0089223F1DC9E8CB008CC7A0 /* KLADRTests */,
+				0089224A1DC9E8CB008CC7A0 /* KLADRUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0089222B1DC9E8CA008CC7A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008922371DC9E8CA008CC7A0 /* Assets.xcassets in Resources */,
+				0089223A1DC9E8CA008CC7A0 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0089223E1DC9E8CB008CC7A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		008922491DC9E8CB008CC7A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		008922291DC9E8CA008CC7A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008922351DC9E8CA008CC7A0 /* main.m in Sources */,
+				008922321DC9E8CA008CC7A0 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0089223C1DC9E8CB008CC7A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008922451DC9E8CB008CC7A0 /* KLADRTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		008922471DC9E8CB008CC7A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008922501DC9E8CB008CC7A0 /* KLADRUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		008922421DC9E8CB008CC7A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0089222C1DC9E8CA008CC7A0 /* KLADR */;
+			targetProxy = 008922411DC9E8CB008CC7A0 /* PBXContainerItemProxy */;
+		};
+		0089224D1DC9E8CB008CC7A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0089222C1DC9E8CA008CC7A0 /* KLADR */;
+			targetProxy = 0089224C1DC9E8CB008CC7A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		008922381DC9E8CA008CC7A0 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				008922391DC9E8CA008CC7A0 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		008922521DC9E8CB008CC7A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		008922531DC9E8CB008CC7A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		008922551DC9E8CB008CC7A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KLADR/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = some.KLADR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		008922561DC9E8CB008CC7A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KLADR/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = some.KLADR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		008922581DC9E8CB008CC7A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KLADRTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = some.KLADRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KLADR.app/Contents/MacOS/KLADR";
+			};
+			name = Debug;
+		};
+		008922591DC9E8CB008CC7A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KLADRTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = some.KLADRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KLADR.app/Contents/MacOS/KLADR";
+			};
+			name = Release;
+		};
+		0089225B1DC9E8CB008CC7A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KLADRUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = some.KLADRUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KLADR;
+			};
+			name = Debug;
+		};
+		0089225C1DC9E8CB008CC7A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KLADRUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = some.KLADRUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KLADR;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		008922281DC9E8C9008CC7A0 /* Build configuration list for PBXProject "KLADR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				008922521DC9E8CB008CC7A0 /* Debug */,
+				008922531DC9E8CB008CC7A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		008922541DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				008922551DC9E8CB008CC7A0 /* Debug */,
+				008922561DC9E8CB008CC7A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		008922571DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				008922581DC9E8CB008CC7A0 /* Debug */,
+				008922591DC9E8CB008CC7A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0089225A1DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADRUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0089225B1DC9E8CB008CC7A0 /* Debug */,
+				0089225C1DC9E8CB008CC7A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 008922251DC9E8C9008CC7A0 /* Project object */;
+}
