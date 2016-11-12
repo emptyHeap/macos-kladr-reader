@@ -7,12 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0014CCA41DCA078B00FA7DB1 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0014CCA31DCA078B00FA7DB1 /* DataHandler.m */; };
+		0014CCA71DCA081700FA7DB1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */; };
+		0014CCAE1DCB38D100FA7DB1 /* LocationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0014CCAD1DCB38D100FA7DB1 /* LocationType.m */; };
+		0014CCB11DCB3E2000FA7DB1 /* KLADRObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0014CCB01DCB3E2000FA7DB1 /* KLADRObject.m */; };
+		0014CCB51DCB827900FA7DB1 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 0014CCB41DCB827800FA7DB1 /* Region.m */; };
+		0014CCB81DCB835100FA7DB1 /* Town.m in Sources */ = {isa = PBXBuildFile; fileRef = 0014CCB71DCB835100FA7DB1 /* Town.m */; };
+		0014CCBB1DCB851500FA7DB1 /* Street.m in Sources */ = {isa = PBXBuildFile; fileRef = 0014CCBA1DCB851500FA7DB1 /* Street.m */; };
+		001703E61DD1BB4F006A4874 /* KLADRIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 001703E51DD1BB4F006A4874 /* KLADRIndex.m */; };
+		00446AD31DD49C2F00469560 /* kladr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00446AD21DD4993800469560 /* kladr.sqlite */; };
 		008922321DC9E8CA008CC7A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 008922311DC9E8CA008CC7A0 /* AppDelegate.m */; };
 		008922351DC9E8CA008CC7A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 008922341DC9E8CA008CC7A0 /* main.m */; };
 		008922371DC9E8CA008CC7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008922361DC9E8CA008CC7A0 /* Assets.xcassets */; };
 		0089223A1DC9E8CA008CC7A0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008922381DC9E8CA008CC7A0 /* MainMenu.xib */; };
 		008922451DC9E8CB008CC7A0 /* KLADRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 008922441DC9E8CB008CC7A0 /* KLADRTests.m */; };
 		008922501DC9E8CB008CC7A0 /* KLADRUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0089224F1DC9E8CB008CC7A0 /* KLADRUITests.m */; };
+		0089225F1DC9F0A9008CC7A0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0089225E1DC9F0A9008CC7A0 /* MainViewController.m */; };
+		00A2C6C71DD325F30076D181 /* House.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A2C6C61DD325F30076D181 /* House.m */; };
+		00F4D9901DD1FE93000BCCD5 /* DisctrictTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4D98F1DD1FE93000BCCD5 /* DisctrictTextView.m */; };
+		00F4D9941DD207F2000BCCD5 /* DistrictTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4D9931DD207F2000BCCD5 /* DistrictTextField.m */; };
+		00F4D9971DD2080C000BCCD5 /* TownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4D9961DD2080C000BCCD5 /* TownTextField.m */; };
+		00F4D99A1DD2082A000BCCD5 /* StreetTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4D9991DD2082A000BCCD5 /* StreetTextField.m */; };
+		00F4D99D1DD20845000BCCD5 /* HouseTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4D99C1DD20845000BCCD5 /* HouseTextField.m */; };
+		ABE5C7FEF611E48BF6DE49DC /* libPods-KLADR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD4AEF1D134918805F68F3B /* libPods-KLADR.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +50,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0014CCA21DCA078B00FA7DB1 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
+		0014CCA31DCA078B00FA7DB1 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
+		0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		0014CCAC1DCB38D100FA7DB1 /* LocationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationType.h; sourceTree = "<group>"; };
+		0014CCAD1DCB38D100FA7DB1 /* LocationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationType.m; sourceTree = "<group>"; };
+		0014CCAF1DCB3E2000FA7DB1 /* KLADRObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLADRObject.h; sourceTree = "<group>"; };
+		0014CCB01DCB3E2000FA7DB1 /* KLADRObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLADRObject.m; sourceTree = "<group>"; };
+		0014CCB21DCB4D0800FA7DB1 /* KLADRModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLADRModels.h; sourceTree = "<group>"; };
+		0014CCB31DCB827800FA7DB1 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
+		0014CCB41DCB827800FA7DB1 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
+		0014CCB61DCB835100FA7DB1 /* Town.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Town.h; sourceTree = "<group>"; };
+		0014CCB71DCB835100FA7DB1 /* Town.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Town.m; sourceTree = "<group>"; };
+		0014CCB91DCB851500FA7DB1 /* Street.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Street.h; sourceTree = "<group>"; };
+		0014CCBA1DCB851500FA7DB1 /* Street.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Street.m; sourceTree = "<group>"; };
+		001703E41DD1BB4F006A4874 /* KLADRIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLADRIndex.h; sourceTree = "<group>"; };
+		001703E51DD1BB4F006A4874 /* KLADRIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLADRIndex.m; sourceTree = "<group>"; };
+		00446AD21DD4993800469560 /* kladr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = kladr.sqlite; path = ../../../kladr.sqlite; sourceTree = "<group>"; };
+		00501BE21DD37A040021A3C5 /* KLADR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KLADR.entitlements; sourceTree = "<group>"; };
 		0089222D1DC9E8CA008CC7A0 /* KLADR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLADR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		008922301DC9E8CA008CC7A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		008922311DC9E8CA008CC7A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,6 +81,23 @@
 		0089224B1DC9E8CB008CC7A0 /* KLADRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KLADRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0089224F1DC9E8CB008CC7A0 /* KLADRUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLADRUITests.m; sourceTree = "<group>"; };
 		008922511DC9E8CB008CC7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0089225D1DC9F0A9008CC7A0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0089225E1DC9F0A9008CC7A0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		00A2C6C51DD325F30076D181 /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = "<group>"; };
+		00A2C6C61DD325F30076D181 /* House.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = House.m; sourceTree = "<group>"; };
+		00F4D98E1DD1FE93000BCCD5 /* DisctrictTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisctrictTextView.h; path = TextViews/DisctrictTextView.h; sourceTree = "<group>"; };
+		00F4D98F1DD1FE93000BCCD5 /* DisctrictTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisctrictTextView.m; path = TextViews/DisctrictTextView.m; sourceTree = "<group>"; };
+		00F4D9921DD207F2000BCCD5 /* DistrictTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DistrictTextField.h; path = TextFields/DistrictTextField.h; sourceTree = "<group>"; };
+		00F4D9931DD207F2000BCCD5 /* DistrictTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DistrictTextField.m; path = TextFields/DistrictTextField.m; sourceTree = "<group>"; };
+		00F4D9951DD2080C000BCCD5 /* TownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TownTextField.h; path = TextFields/TownTextField.h; sourceTree = "<group>"; };
+		00F4D9961DD2080C000BCCD5 /* TownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TownTextField.m; path = TextFields/TownTextField.m; sourceTree = "<group>"; };
+		00F4D9981DD2082A000BCCD5 /* StreetTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreetTextField.h; path = TextFields/StreetTextField.h; sourceTree = "<group>"; };
+		00F4D9991DD2082A000BCCD5 /* StreetTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreetTextField.m; path = TextFields/StreetTextField.m; sourceTree = "<group>"; };
+		00F4D99B1DD20845000BCCD5 /* HouseTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HouseTextField.h; path = TextFields/HouseTextField.h; sourceTree = "<group>"; };
+		00F4D99C1DD20845000BCCD5 /* HouseTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HouseTextField.m; path = TextFields/HouseTextField.m; sourceTree = "<group>"; };
+		2CD4AEF1D134918805F68F3B /* libPods-KLADR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KLADR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F92A38B1ED87CABE430CC306 /* Pods-KLADR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLADR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KLADR/Pods-KLADR.debug.xcconfig"; sourceTree = "<group>"; };
+		FE2A457EB6C9C0C92B740EA7 /* Pods-KLADR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLADR.release.xcconfig"; path = "Pods/Target Support Files/Pods-KLADR/Pods-KLADR.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0014CCA71DCA081700FA7DB1 /* libsqlite3.tbd in Frameworks */,
+				ABE5C7FEF611E48BF6DE49DC /* libPods-KLADR.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +127,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0014CC931DCA03DD00FA7DB1 /* DataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				0014CCA21DCA078B00FA7DB1 /* DataHandler.h */,
+				0014CCA31DCA078B00FA7DB1 /* DataHandler.m */,
+			);
+			name = DataHandler;
+			sourceTree = "<group>";
+		};
+		0014CCA51DCA081700FA7DB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */,
+				2CD4AEF1D134918805F68F3B /* libPods-KLADR.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0014CCA81DCB375700FA7DB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0014CCB21DCB4D0800FA7DB1 /* KLADRModels.h */,
+				0014CCAC1DCB38D100FA7DB1 /* LocationType.h */,
+				0014CCAD1DCB38D100FA7DB1 /* LocationType.m */,
+				0014CCAF1DCB3E2000FA7DB1 /* KLADRObject.h */,
+				0014CCB01DCB3E2000FA7DB1 /* KLADRObject.m */,
+				0014CCB31DCB827800FA7DB1 /* Region.h */,
+				0014CCB41DCB827800FA7DB1 /* Region.m */,
+				0014CCB61DCB835100FA7DB1 /* Town.h */,
+				0014CCB71DCB835100FA7DB1 /* Town.m */,
+				0014CCB91DCB851500FA7DB1 /* Street.h */,
+				0014CCBA1DCB851500FA7DB1 /* Street.m */,
+				00A2C6C51DD325F30076D181 /* House.h */,
+				00A2C6C61DD325F30076D181 /* House.m */,
+				001703E41DD1BB4F006A4874 /* KLADRIndex.h */,
+				001703E51DD1BB4F006A4874 /* KLADRIndex.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		008922241DC9E8C9008CC7A0 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +174,8 @@
 				008922431DC9E8CB008CC7A0 /* KLADRTests */,
 				0089224E1DC9E8CB008CC7A0 /* KLADRUITests */,
 				0089222E1DC9E8CA008CC7A0 /* Products */,
+				0014CCA51DCA081700FA7DB1 /* Frameworks */,
+				9FECF933A4F1A883190FA75D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,12 +192,20 @@
 		0089222F1DC9E8CA008CC7A0 /* KLADR */ = {
 			isa = PBXGroup;
 			children = (
+				00446AD21DD4993800469560 /* kladr.sqlite */,
+				00501BE21DD37A040021A3C5 /* KLADR.entitlements */,
+				00F4D9911DD207C5000BCCD5 /* TextFields */,
+				00F4D98D1DD1FE2B000BCCD5 /* TextViews */,
+				0014CCA81DCB375700FA7DB1 /* Models */,
+				0014CC931DCA03DD00FA7DB1 /* DataHandler */,
 				008922301DC9E8CA008CC7A0 /* AppDelegate.h */,
 				008922311DC9E8CA008CC7A0 /* AppDelegate.m */,
 				008922361DC9E8CA008CC7A0 /* Assets.xcassets */,
 				008922381DC9E8CA008CC7A0 /* MainMenu.xib */,
 				0089223B1DC9E8CA008CC7A0 /* Info.plist */,
 				008922331DC9E8CA008CC7A0 /* Supporting Files */,
+				0089225D1DC9F0A9008CC7A0 /* MainViewController.h */,
+				0089225E1DC9F0A9008CC7A0 /* MainViewController.m */,
 			);
 			path = KLADR;
 			sourceTree = "<group>";
@@ -132,6 +236,39 @@
 			path = KLADRUITests;
 			sourceTree = "<group>";
 		};
+		00F4D98D1DD1FE2B000BCCD5 /* TextViews */ = {
+			isa = PBXGroup;
+			children = (
+				00F4D98E1DD1FE93000BCCD5 /* DisctrictTextView.h */,
+				00F4D98F1DD1FE93000BCCD5 /* DisctrictTextView.m */,
+			);
+			name = TextViews;
+			sourceTree = "<group>";
+		};
+		00F4D9911DD207C5000BCCD5 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				00F4D9921DD207F2000BCCD5 /* DistrictTextField.h */,
+				00F4D9931DD207F2000BCCD5 /* DistrictTextField.m */,
+				00F4D9951DD2080C000BCCD5 /* TownTextField.h */,
+				00F4D9961DD2080C000BCCD5 /* TownTextField.m */,
+				00F4D9981DD2082A000BCCD5 /* StreetTextField.h */,
+				00F4D9991DD2082A000BCCD5 /* StreetTextField.m */,
+				00F4D99B1DD20845000BCCD5 /* HouseTextField.h */,
+				00F4D99C1DD20845000BCCD5 /* HouseTextField.m */,
+			);
+			name = TextFields;
+			sourceTree = "<group>";
+		};
+		9FECF933A4F1A883190FA75D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F92A38B1ED87CABE430CC306 /* Pods-KLADR.debug.xcconfig */,
+				FE2A457EB6C9C0C92B740EA7 /* Pods-KLADR.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 008922541DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADR" */;
 			buildPhases = (
+				CB36364916AB2B24D02641F4 /* [CP] Check Pods Manifest.lock */,
 				008922291DC9E8CA008CC7A0 /* Sources */,
 				0089222A1DC9E8CA008CC7A0 /* Frameworks */,
 				0089222B1DC9E8CA008CC7A0 /* Resources */,
+				C7F6AC40877E6BEB3E0DD7BE /* [CP] Embed Pods Frameworks */,
+				136E9B958AA465D40D2004AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,6 +340,11 @@
 					0089222C1DC9E8CA008CC7A0 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					0089223F1DC9E8CB008CC7A0 = {
 						CreatedOnToolsVersion = 8.0;
@@ -238,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00446AD31DD49C2F00469560 /* kladr.sqlite in Resources */,
 				008922371DC9E8CA008CC7A0 /* Assets.xcassets in Resources */,
 				0089223A1DC9E8CA008CC7A0 /* MainMenu.xib in Resources */,
 			);
@@ -259,12 +405,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		136E9B958AA465D40D2004AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KLADR/Pods-KLADR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7F6AC40877E6BEB3E0DD7BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KLADR/Pods-KLADR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB36364916AB2B24D02641F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		008922291DC9E8CA008CC7A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0014CCB51DCB827900FA7DB1 /* Region.m in Sources */,
+				0014CCB81DCB835100FA7DB1 /* Town.m in Sources */,
+				0014CCAE1DCB38D100FA7DB1 /* LocationType.m in Sources */,
+				0014CCA41DCA078B00FA7DB1 /* DataHandler.m in Sources */,
 				008922351DC9E8CA008CC7A0 /* main.m in Sources */,
+				00F4D9941DD207F2000BCCD5 /* DistrictTextField.m in Sources */,
+				00A2C6C71DD325F30076D181 /* House.m in Sources */,
+				0014CCBB1DCB851500FA7DB1 /* Street.m in Sources */,
+				0014CCB11DCB3E2000FA7DB1 /* KLADRObject.m in Sources */,
+				00F4D99A1DD2082A000BCCD5 /* StreetTextField.m in Sources */,
+				00F4D9901DD1FE93000BCCD5 /* DisctrictTextView.m in Sources */,
+				00F4D99D1DD20845000BCCD5 /* HouseTextField.m in Sources */,
+				001703E61DD1BB4F006A4874 /* KLADRIndex.m in Sources */,
+				00F4D9971DD2080C000BCCD5 /* TownTextField.m in Sources */,
+				0089225F1DC9F0A9008CC7A0 /* MainViewController.m in Sources */,
 				008922321DC9E8CA008CC7A0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,8 +609,11 @@
 		};
 		008922551DC9E8CB008CC7A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F92A38B1ED87CABE430CC306 /* Pods-KLADR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = KLADR/KLADR.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = KLADR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -413,8 +624,11 @@
 		};
 		008922561DC9E8CB008CC7A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE2A457EB6C9C0C92B740EA7 /* Pods-KLADR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = KLADR/KLADR.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = KLADR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -492,6 +706,7 @@
 				008922561DC9E8CB008CC7A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		008922571DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADRTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +715,7 @@
 				008922591DC9E8CB008CC7A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0089225A1DC9E8CB008CC7A0 /* Build configuration list for PBXNativeTarget "KLADRUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +724,7 @@
 				0089225C1DC9E8CB008CC7A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

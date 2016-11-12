@@ -7,16 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "DataHandler.h"
 
 @interface AppDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSWindow *window;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    [DataHandler preload];
 }
 
 
