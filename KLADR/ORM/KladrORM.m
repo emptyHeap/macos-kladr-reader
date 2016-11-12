@@ -12,11 +12,13 @@
 @implementation KladrORM{
     FMDatabase *_db;
     NSOperationQueue *_dbOperationsQueue;
+    NSUInteger _nonDbOperations;
 }
 
 - (id) initWithPath:(NSString *)path{
     self = [super init];
     if (self){
+        _nonDbOperations = 0;
         _db = [[FMDatabase alloc] initWithPath:path];
         _dbOperationsQueue = [[NSOperationQueue alloc] init];
         [_dbOperationsQueue setMaxConcurrentOperationCount:1];
@@ -49,7 +51,7 @@
     [_dbOperationsQueue addOperationWithBlock:^{
         NSString *query = @"SELECT \"PKUID\", \"NAME\", \"SOCR\", \"CODE\", \"INDEX\", \"GNINMB\", \"OCATD\" "
         "FROM \"kladr_tbl\" "
-        "WHERE \"OCATD\" != \"\" AND \"OCATD\" \% 1000000000 = 0";
+        "WHERE \"CODE\" \% 100000000000 = 0";
         NSMutableArray<Region *> *regions = [[NSMutableArray alloc] init];
         
         [_db open];
@@ -71,7 +73,7 @@
     [_dbOperationsQueue addOperationWithBlock:^{
         NSString *query = [NSString stringWithFormat:@"SELECT \"PKUID\", \"NAME\", \"SOCR\", \"CODE\", \"INDEX\", \"GNINMB\", \"OCATD\" "
                            @"FROM \"kladr_tbl\" "
-                           @"WHERE \"OCATD\" %% 1000000000 != 0 AND \"OCATD\" / 1000000000 = %@", region.regionCode];
+                           @"WHERE \"CODE\" %% 100000000000 != 0 AND \"OCATD\" / 1000000000 = %@", region.regionCode];
         NSMutableArray<Town *> *towns = [[NSMutableArray alloc] init];
         
         [_db open];
@@ -136,6 +138,18 @@
         
         housesHandler(houses);
     }];
+}
+
+- (BOOL) operationsFinished{
+    return (([_dbOperationsQueue operationCount] - _nonDbOperations) == 0);
+}
+
+- (void) executeInMainQueueAfterOperationsBlock:(void (^)(void))block{
+    [_dbOperationsQueue addOperationWithBlock:^{
+        _nonDbOperations --;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:block];
+    }];
+    _nonDbOperations ++;
 }
 
 @end

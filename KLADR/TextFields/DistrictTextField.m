@@ -7,7 +7,6 @@
 //
 
 #import "DistrictTextField.h"
-#import "../Region.h"
 
 @implementation DistrictTextField
 

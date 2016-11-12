@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LocationType.h"
-#import "../KLADRIndex.h"
+#import "../Indexer/KLADRIndex.h"
 
 @interface KLADRObject : NSObject
 

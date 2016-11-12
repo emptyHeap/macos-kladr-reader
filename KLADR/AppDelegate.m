@@ -20,11 +20,17 @@
 
 @synthesize kladrDatabase = _kladrDatabase;
 
+- (id)init {
+    self = [super init];
+    if (self){
+        _kladrDatabase = [[KladrORM alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"kladr" ofType:@"sqlite"]];
+    }
+    return self;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     [DataHandler preload];
-    
-    _kladrDatabase = [[KladrORM alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"kladr" ofType:@"sqlite"]];
 }
 
 

@@ -23,6 +23,7 @@
                 <outlet property="houseTextField" destination="dZ3-yo-wfc" id="bkq-eK-qax"/>
                 <outlet property="streetTextField" destination="J9C-6P-1Fp" id="5N9-Px-QdQ"/>
                 <outlet property="townTextField" destination="trW-hc-nbq" id="xOg-hG-VMb"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="5AK-in-EVs"/>
             </connections>
         </viewController>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>

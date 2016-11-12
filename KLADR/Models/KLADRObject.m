@@ -69,7 +69,7 @@
                                                  code:code
                                                 ocatd:ocatd
                                          locationType:locationType];
-    [[self  index] indexKLADRObject:newObject];
+    [[self  index] addKLADRObject:newObject];
 }
 
 + (KLADRObject *)withCode:(NSString *)code{

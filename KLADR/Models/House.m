@@ -18,22 +18,4 @@
     [super parseOcatd];
 }
 
-+ (void)cacheNewWithId:(NSUInteger)pkuid
-                  name:(NSString *)name
-                  code:(NSString *)code
-                 ocatd:(NSString *)ocatd
-          locationType:(LocationType *)locationType{
-    NSArray <NSString *> *houses = [name componentsSeparatedByString:@","];
-    for (NSString *house in houses){
-        KLADRObject *newObject = [[self alloc] initWithId:pkuid
-                                                     name:house
-                                                     code:code
-                                                    ocatd:ocatd
-                                             locationType:locationType];
-        [[self  index] indexKLADRObject:newObject];
-    }
-    
-}
-
-
 @end
