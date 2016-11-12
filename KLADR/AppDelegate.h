@@ -7,8 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ORM/KladrORM.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+
+@property (strong, readonly) KladrORM* kladrDatabase;
 
 @end
 

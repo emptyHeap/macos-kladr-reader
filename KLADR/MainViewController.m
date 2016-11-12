@@ -8,17 +8,40 @@
 
 #import "MainViewController.h"
 #import "KLADRModels.h"
+#import "AppDelegate.h"
 #import "DataHandler.h"
+#import "ORM/KladrORM.h"
 
 @interface MainViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+    NSArray <LocationType *> *_locations;
+    NSDictionary <NSString *, Region *> *_regions;
+    NSDictionary <NSString *, Town *> *_towns;
+    NSDictionary <NSString *, Street *> *_streets;
+    NSDictionary <NSString *, House *> *_houses;
+    KladrORM *_kladrDatabase;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    AppDelegate *applicationDelegate = ((AppDelegate *)[[NSApplication sharedApplication] delegate]);
+    _kladrDatabase = applicationDelegate.kladrDatabase;
+    
+    [_kladrDatabase loadLocationTypesForBlock:^(NSArray<LocationType *> *locations) {
+        _locations = locations;
+    }];
+    
+    [_kladrDatabase loadRegionsForBlock:^(NSArray<Region *> *regions) {
+        NSMutableDictionary <NSString *, Region *> *regionsNameDict = [[NSMutableDictionary alloc] init];
+        for (Region *region in regions){
+            [regionsNameDict setObject:region forKey:region.name];
+        }
+        _regions = regionsNameDict;
+    }];
 }
 
 - (NSArray<NSString *> *)control:(NSControl *)control textView:(NSTextView *)textView completions:(NSArray<NSString *> *)words forPartialWordRange:(NSRange)charRange indexOfSelectedItem:(NSInteger *)index{

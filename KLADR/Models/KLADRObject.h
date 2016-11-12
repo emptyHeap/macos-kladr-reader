@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LocationType.h"
-#import "KLADRIndex.h"
+#import "../KLADRIndex.h"
 
 @interface KLADRObject : NSObject
 
@@ -21,11 +21,11 @@
 //must be part of sortable implementation
 @property (nonatomic) NSInteger sortPriority;
 
-- (KLADRObject *) initWithId:(NSUInteger)pkuid
-                   name:(NSString *)name
-                   code:(NSString *)code
-                  ocatd:(NSString *)okatd
-           locationType:(LocationType *)locationType;
+- (id) initWithId:(NSUInteger)pkuid
+             name:(NSString *)name
+             code:(NSString *)code
+            ocatd:(NSString *)okatd
+     locationType:(LocationType *)locationType;
 - (void) parseOcatd;
 - (void) select;
 

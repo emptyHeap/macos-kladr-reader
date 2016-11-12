@@ -14,11 +14,17 @@
 @property (assign) IBOutlet NSWindow *window;
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    KladrORM *_kladrDatabase;
+}
+
+@synthesize kladrDatabase = _kladrDatabase;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     [DataHandler preload];
+    
+    _kladrDatabase = [[KladrORM alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"kladr" ofType:@"sqlite"]];
 }
 
 

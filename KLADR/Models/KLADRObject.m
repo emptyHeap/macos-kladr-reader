@@ -31,11 +31,11 @@
 @synthesize taxServiceCode = _taxServiceCode;
 @synthesize postIndex = _postIndex;
 
-- (KLADRObject *)initWithId:(NSUInteger)pkuid
-                  name:(NSString *)name
-                  code:(NSString *)code
-                 ocatd:(NSString *)ocatd
-          locationType:(LocationType *)locationType{
+- (id)initWithId:(NSUInteger)pkuid
+            name:(NSString *)name
+            code:(NSString *)code
+           ocatd:(NSString *)ocatd
+    locationType:(LocationType *)locationType{
     self = [super init];
     if (self){
         _code = code;
