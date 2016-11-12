@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0014CCA41DCA078B00FA7DB1 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0014CCA31DCA078B00FA7DB1 /* DataHandler.m */; };
 		0014CCA71DCA081700FA7DB1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */; };
-		00566FB91DD7169D00BAF70E /* kladr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00566FB81DD7169D00BAF70E /* kladr.sqlite */; };
 		00566FBD1DD718CD00BAF70E /* KladrORM.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566FBC1DD718CD00BAF70E /* KladrORM.m */; };
 		00566FCB1DD7198D00BAF70E /* House.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566FBF1DD7198D00BAF70E /* House.m */; };
 		00566FCC1DD7198D00BAF70E /* KLADRObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566FC21DD7198D00BAF70E /* KLADRObject.m */; };
@@ -54,7 +53,6 @@
 		0014CCA31DCA078B00FA7DB1 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
 		0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		00501BE21DD37A040021A3C5 /* KLADR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KLADR.entitlements; sourceTree = "<group>"; };
-		00566FB81DD7169D00BAF70E /* kladr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = kladr.sqlite; sourceTree = "<group>"; };
 		00566FBB1DD718CD00BAF70E /* KladrORM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KladrORM.h; path = KLADR/ORM/KladrORM.h; sourceTree = "<group>"; };
 		00566FBC1DD718CD00BAF70E /* KladrORM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KladrORM.m; path = KLADR/ORM/KladrORM.m; sourceTree = "<group>"; };
 		00566FBE1DD7198D00BAF70E /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = House.h; path = Models/House.h; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		008922241DC9E8C9008CC7A0 = {
 			isa = PBXGroup;
 			children = (
-				00566FB81DD7169D00BAF70E /* kladr.sqlite */,
 				0089222F1DC9E8CA008CC7A0 /* KLADR */,
 				008922431DC9E8CB008CC7A0 /* KLADRTests */,
 				0089224E1DC9E8CB008CC7A0 /* KLADRUITests */,
@@ -394,7 +391,6 @@
 			files = (
 				008922371DC9E8CA008CC7A0 /* Assets.xcassets in Resources */,
 				0089223A1DC9E8CA008CC7A0 /* MainMenu.xib in Resources */,
-				00566FB91DD7169D00BAF70E /* kladr.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
