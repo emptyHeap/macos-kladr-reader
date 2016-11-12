@@ -29,23 +29,6 @@
 - (void) parseOcatd;
 - (void) select;
 
-+ (void) cacheNewWithId:(NSUInteger)pkuid
-                   name:(NSString *)name
-                   code:(NSString *)code
-                  ocatd:(NSString *)okatd
-           locationType:(LocationType *)locationType;
-+ (id) selected;
-+ (id) withName:(NSString *)name;
-+ (id) withCode:(NSString *)code;
-+ (id) withPkuid:(NSUInteger)pkuid;
-
-+ (NSArray <id> *) searchWithName:(NSString *)string;
-+ (KLADRIndex *) index;
-+ (void) renewIndex;
-
-
-+ (void) clearMem;
-
 @end
 
 @protocol KLADRAbbreviations

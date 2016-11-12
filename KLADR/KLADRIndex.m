@@ -28,33 +28,16 @@
     return self;
 }
 
-- (void) dealloc {
-    NSLog(@"%@ dealloc", self);
-}
-
-- (void) setSelected:(KLADRObject *)selected{
-    _selected = selected;
-
-    kUTTypeToDoItem;
-    //here must be loading initializator
-}
-
-- (void) setSelectedByName:(NSString *)selectedName{
-    [self setSelected:[self withName:selectedName]];
-}
-
-- (KLADRObject *)selectedObject{
-    return _selected;
-}
-
-- (NSString *)selectedName{
-    return [[self selectedObject] name];
-}
-
-- (void) indexKLADRObject:(KLADRObject *)kladrObject{
+- (void) addKLADRObject:(KLADRObject *)kladrObject{
     _pkuidIndex[[NSNumber numberWithUnsignedInteger:kladrObject.pkuid]] = kladrObject;
     _nameIndex[kladrObject.name] = kladrObject;
     _codeIndex[kladrObject.code] = kladrObject;
+}
+
+- (void) addKLADRObjects:(NSArray<KLADRObject *> *)kladrObjects{
+    for (KLADRObject *object in kladrObjects){
+        [self addKLADRObject:object];
+    }
 }
 
 - (KLADRObject *)withCode:(NSString *)code{
@@ -82,6 +65,10 @@
 }
 
 - (NSArray<NSString *> *) searchWithName:(NSString *)string{
+    
+    if ([string length] == 0){
+        return self.objects;
+    }
     
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(KLADRObject *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
         evaluatedObject.sortPriority = [evaluatedObject.name rangeOfString:string].location;

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "DataHandler.h"
 
 @interface AppDelegate ()
 
@@ -30,7 +29,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    [DataHandler preload];
 }
 
 

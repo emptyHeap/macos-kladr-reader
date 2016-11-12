@@ -11,9 +11,6 @@
 #import "Models/KLADRModels.h"
 #import "AppDelegate.h"
 #import "ORM/KladrORM.h"
-#import "Indexer/KLADRIndex.h"
-
-#import "DataHandler.h"
 
 @interface MainViewController ()
 

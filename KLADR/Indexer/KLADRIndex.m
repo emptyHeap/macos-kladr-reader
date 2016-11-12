@@ -24,20 +24,7 @@
         _pkuidIndex = [[NSMutableDictionary alloc] init];
         _locationTypeIndex = [[NSMutableDictionary alloc] init];
     }
-    NSLog(@"%@ alloc", self);
     return self;
-}
-
-- (void) setSelectedByName:(NSString *)selectedName{
-    [self setSelected:[self withName:selectedName]];
-}
-
-- (KLADRObject *)selectedObject{
-    return _selected;
-}
-
-- (NSString *)selectedName{
-    return [[self selectedObject] name];
 }
 
 - (void) addKLADRObject:(KLADRObject *)kladrObject{

@@ -12,21 +12,15 @@
 
 @interface KLADRIndex : NSObject
 
-- (void) indexKLADRObject:(KLADRObject *)kladrObject;
+- (void) addKLADRObject:(KLADRObject *)kladrObject;
+- (void) addKLADRObjects:(NSArray <KLADRObject *> *)kladrObjects;
 
-- (KLADRObject *) withName:(NSString *)name;
-- (KLADRObject *) withCode:(NSString *)code;
-- (NSArray<KLADRObject *> *) withLocationType:(LocationType *)locationType;
+- (id) withName:(NSString *)name;
+- (id) withCode:(NSString *)code;
+- (NSArray<id> *) withLocationType:(LocationType *)locationType;
 
-- (void) setSelectedByName:(NSString *)selectedName;
-- (void) setSelected:(KLADRObject *)selected;
-- (NSString *) selectedName;
-- (KLADRObject *) selectedObject;
-
-
-//- (NSArray<NSString *> *) names;
-- (NSArray<KLADRObject *> *) searchWithName:(NSString *)string;
-- (NSArray<KLADRObject *> *) objects;
+- (NSArray<id> *) searchWithName:(NSString *)string;
+- (NSArray<id> *) objects;
 
 - (KLADRObject *) withPkuid:(NSUInteger)pkuid;
 

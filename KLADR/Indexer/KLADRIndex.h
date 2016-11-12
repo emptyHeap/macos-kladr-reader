@@ -19,9 +19,6 @@
 - (id) withCode:(NSString *)code;
 - (NSArray<id> *) withLocationType:(LocationType *)locationType;
 
-- (void) setSelectedByName:(NSString *)selectedName;
-- (void) setSelected:(KLADRObject *)selected;
-
 //- (NSArray<NSString *> *) names;
 - (NSArray<id> *) searchWithName:(NSString *)string;
 - (NSArray<id> *) objects;

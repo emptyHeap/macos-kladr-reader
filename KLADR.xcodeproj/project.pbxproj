@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0014CCA41DCA078B00FA7DB1 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0014CCA31DCA078B00FA7DB1 /* DataHandler.m */; };
 		0014CCA71DCA081700FA7DB1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */; };
 		00566FBD1DD718CD00BAF70E /* KladrORM.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566FBC1DD718CD00BAF70E /* KladrORM.m */; };
 		00566FCB1DD7198D00BAF70E /* House.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566FBF1DD7198D00BAF70E /* House.m */; };
@@ -50,8 +49,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0014CCA21DCA078B00FA7DB1 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
-		0014CCA31DCA078B00FA7DB1 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
 		0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		00501BE21DD37A040021A3C5 /* KLADR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KLADR.entitlements; sourceTree = "<group>"; };
 		00566FBB1DD718CD00BAF70E /* KladrORM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KladrORM.h; path = KLADR/ORM/KladrORM.h; sourceTree = "<group>"; };
@@ -127,15 +124,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0014CC931DCA03DD00FA7DB1 /* DataHandler */ = {
-			isa = PBXGroup;
-			children = (
-				0014CCA21DCA078B00FA7DB1 /* DataHandler.h */,
-				0014CCA31DCA078B00FA7DB1 /* DataHandler.m */,
-			);
-			name = DataHandler;
-			sourceTree = "<group>";
-		};
 		0014CCA51DCA081700FA7DB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +203,6 @@
 				00501BE21DD37A040021A3C5 /* KLADR.entitlements */,
 				00F4D9911DD207C5000BCCD5 /* TextFields */,
 				0014CCA81DCB375700FA7DB1 /* Models */,
-				0014CC931DCA03DD00FA7DB1 /* DataHandler */,
 				008922301DC9E8CA008CC7A0 /* AppDelegate.h */,
 				008922311DC9E8CA008CC7A0 /* AppDelegate.m */,
 				008922361DC9E8CA008CC7A0 /* Assets.xcassets */,
@@ -467,7 +454,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0014CCA41DCA078B00FA7DB1 /* DataHandler.m in Sources */,
 				00566FBD1DD718CD00BAF70E /* KladrORM.m in Sources */,
 				008922351DC9E8CA008CC7A0 /* main.m in Sources */,
 				00F4D9941DD207F2000BCCD5 /* DistrictTextField.m in Sources */,
