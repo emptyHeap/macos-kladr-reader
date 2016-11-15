@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KLADRObject.h"
+#import "KladrObject.h"
 
-@interface Region : KLADRObject <KLADRAbbreviations>
+static NSRange const RegionRegionCodeRange = {0, 2};
+
+@interface Region : KladrObject <KladrAbbreviations>
+
+@property (readonly) NSUInteger regionCode;
 
 @end

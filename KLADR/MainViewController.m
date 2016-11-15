@@ -1,6 +1,6 @@
 //
 //  MainViewController.m
-//  KLADR
+//  Kladr
 //
 //  Created by Konstantin on 02/11/16.
 //  Copyright © 2016 Konstantin. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#import "Models/KLADRModels.h"
+#import "Models/KladrModels.h"
 #import "AppDelegate.h"
 #import "ORM/KladrORM.h"
 
@@ -18,7 +18,7 @@
 
 @implementation MainViewController {
     
-    KLADRIndex *_regions, *_towns, *_streets, *_houses;
+    KladrIndex *_regions, *_towns, *_streets, *_houses;
     NSArray <LocationType *> *_locations;
     
     Region *_selectedRegion;
@@ -32,10 +32,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _regions = [[KLADRIndex alloc] init];
-    _towns = [[KLADRIndex alloc] init];
-    _streets = [[KLADRIndex alloc] init];
-    _houses = [[KLADRIndex alloc] init];
+    _regions = [[KladrIndex alloc] init];
+    _towns = [[KladrIndex alloc] init];
+    _streets = [[KladrIndex alloc] init];
+    _houses = [[KladrIndex alloc] init];
     
     AppDelegate *applicationDelegate = ((AppDelegate *)[[NSApplication sharedApplication] delegate]);
     _kladrDatabase = applicationDelegate.kladrDatabase;
@@ -44,7 +44,7 @@
         _locations = locations;
     }];
     [_kladrDatabase loadRegionsForBlock:^(NSArray<Region *> *regions) {
-        [_regions addKLADRObjects:regions];
+        [_regions addKladrObjects:regions];
     }];
 }
 
@@ -59,7 +59,7 @@
         //prevent autocomplete for now
         return nil;
     } else {
-        NSArray<KLADRObject *> *variants;
+        NSArray<KladrObject *> *variants;
         NSString *query = [textView string];
         NSMutableArray <NSString *> *stringResult = [[NSMutableArray alloc] init];
         
@@ -71,7 +71,7 @@
             variants = [_streets searchWithName:query];
         else if (control == self.houseTextField)
             variants = [_houses searchWithName:query];
-        for (KLADRObject *variant in variants) {
+        for (KladrObject *variant in variants) {
             [stringResult addObject:variant.name];
         }
         
@@ -89,20 +89,20 @@
         if (control == self.districtTextField){
             _selectedRegion = [_regions withName:control.stringValue];
             [_kladrDatabase loadTownsOfRegion:_selectedRegion forBlock:^(NSArray<Town *> *loadedTowns) {
-                _towns = [[KLADRIndex alloc] init];
-                [_towns addKLADRObjects:loadedTowns];
+                _towns = [[KladrIndex alloc] init];
+                [_towns addKladrObjects:loadedTowns];
             }];
         } else if (control == self.townTextField) {
             _selectedTown = [_towns withName:control.stringValue];
             [_kladrDatabase loadStreetsOfTown:_selectedTown forBlock:^(NSArray<Street *> *loadedStreets) {
-                _streets = [[KLADRIndex alloc] init];
-                [_streets addKLADRObjects:loadedStreets];
+                _streets = [[KladrIndex alloc] init];
+                [_streets addKladrObjects:loadedStreets];
             }];
         } else if (control == self.streetTextField) {
             _selectedStreet = [_streets withName:control.stringValue];
             [_kladrDatabase loadHousesOfStreet:_selectedStreet forBlock:^(NSArray<House *> *loadedHouses) {
-                _houses = [[KLADRIndex alloc] init];
-                [_houses addKLADRObjects:loadedHouses];
+                _houses = [[KladrIndex alloc] init];
+                [_houses addKladrObjects:loadedHouses];
             }];
         } else if (control == self.houseTextField) {
             // for what all that mess?

@@ -14,8 +14,4 @@
     return @[@"д", @"д."];
 }
 
-- (void) parseOcatd{
-    [super parseOcatd];
-}
-
 @end

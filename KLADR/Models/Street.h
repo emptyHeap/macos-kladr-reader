@@ -8,6 +8,10 @@
 
 #import "Town.h"
 
-@interface Street : Town <KLADRAbbreviations>
+static NSRange const StreetCodeRange = {11, 4};
+
+@interface Street : Town <KladrAbbreviations>
+
+@property (readonly) NSUInteger streetCode;
 
 @end

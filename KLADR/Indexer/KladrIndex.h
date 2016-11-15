@@ -1,19 +1,19 @@
 //
-//  KLADRIndexator.h
-//  KLADR
+//  KladrIndexator.h
+//  Kladr
 //
 //  Created by Konstantin on 08/11/16.
 //  Copyright © 2016 Konstantin. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-@class KLADRObject;
+@class KladrObject;
 @class LocationType;
 
-@interface KLADRIndex : NSObject
+@interface KladrIndex : NSObject
 
-- (void) addKLADRObject:(KLADRObject *)kladrObject;
-- (void) addKLADRObjects:(NSArray <KLADRObject *> *)kladrObjects;
+- (void) addKladrObject:(KladrObject *)kladrObject;
+- (void) addKladrObjects:(NSArray <KladrObject *> *)kladrObjects;
 
 - (id) withName:(NSString *)name;
 - (id) withCode:(NSString *)code;
@@ -23,6 +23,6 @@
 - (NSArray<id> *) searchWithName:(NSString *)string;
 - (NSArray<id> *) objects;
 
-- (KLADRObject *) withPkuid:(NSUInteger)pkuid;
+- (KladrObject *) withPkuid:(NSUInteger)pkuid;
 
 @end

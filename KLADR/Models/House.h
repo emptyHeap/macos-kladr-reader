@@ -8,6 +8,6 @@
 
 #import "Street.h"
 
-@interface House : Street <KLADRAbbreviations>
+@interface House : Street <KladrAbbreviations>
 
 @end

@@ -73,7 +73,7 @@
     [_dbOperationsQueue addOperationWithBlock:^{
         NSString *query = [NSString stringWithFormat:@"SELECT \"PKUID\", \"NAME\", \"SOCR\", \"CODE\", \"INDEX\", \"GNINMB\", \"OCATD\" "
                            @"FROM \"kladr_tbl\" "
-                           @"WHERE \"CODE\" %% 100000000000 != 0 AND \"OCATD\" / 1000000000 = %@", region.regionCode];
+                           @"WHERE \"CODE\" %% 100000000000 != 0 AND \"OCATD\" / 1000000000 = %lu", region.regionCode];
         NSMutableArray<Town *> *towns = [[NSMutableArray alloc] init];
         
         [_db open];

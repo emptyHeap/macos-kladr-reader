@@ -7,17 +7,24 @@
 //
 
 #import "Street.h"
+#import "KladrObject+Protected.h"
 
 @implementation Street{
-    NSNumber *_streetCode;
+    NSUInteger _streetCode;
 }
+
+@synthesize streetCode = _streetCode;
 
 + (NSArray <NSString *> *)abbreviations{
     return @[@"ул", @"ул."];
 }
 
-- (void) parseOcatd{
-    [super parseOcatd];
+- (void) parseCode:(NSString *)code{
+    [super parseCode:code];
+    _streetCode = (NSUInteger) [[code substringWithRange:StreetCodeRange] integerValue];
 }
+//- (void) parseOcatd{
+//    [super parseOcatd];
+//}
 
 @end

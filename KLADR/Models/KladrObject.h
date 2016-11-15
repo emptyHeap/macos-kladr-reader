@@ -8,13 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "LocationType.h"
-#import "../Indexer/KLADRIndex.h"
+#import "../Indexer/KladrIndex.h"
 
-@interface KLADRObject : NSObject
+typedef NS_ENUM(NSUInteger, KladrRelevanceCode){
+    KladrRelevanceCodeRelevant,
+    KladrRelevanceCodeOldName,
+    KladrRelevanceCodeReplaced,
+    KladrRelevanceCodeNotExists
+};
+
+@interface KladrObject : NSObject
 
 @property (readonly) NSUInteger pkuid;
 @property (nonatomic, strong, readonly) NSString *name, *code, *ocatd;
-@property (readonly) NSNumber *postIndex, *taxServiceCode, *regionCode;
+@property (readonly) NSNumber *postIndex, *taxServiceCode;
+@property (readonly) KladrRelevanceCode relevance;
 
 @property (nonatomic, strong, readonly) LocationType *locationType;
 
@@ -26,12 +34,10 @@
              code:(NSString *)code
             ocatd:(NSString *)okatd
      locationType:(LocationType *)locationType;
-- (void) parseOcatd;
-- (void) select;
 
 @end
 
-@protocol KLADRAbbreviations
+@protocol KladrAbbreviations
 
 + (NSArray <NSString *> *)abbreviations;
 
