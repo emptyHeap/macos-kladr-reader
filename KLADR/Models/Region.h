@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KladrObject.h"
 
-static NSRange const RegionRegionCodeRange = {0, 2};
+static NSRange const RegionCodeRange = {0, 2};
 
 @interface Region : KladrObject <KladrAbbreviations>
 

@@ -35,7 +35,7 @@
 @synthesize postIndex = _postIndex;
 @synthesize relevance = _relevance;
 
-- (id)initWithId:(NSUInteger)pkuid
+- (instancetype)initWithId:(NSUInteger)pkuid
             name:(NSString *)name
             code:(NSString *)code
            ocatd:(NSString *)ocatd
@@ -56,7 +56,7 @@
 }
 
 - (void)parseOcatd:(NSString *)ocatd{
-    _regionCode = [NSNumber numberWithLong:[[ocatd substringWithRange:NSMakeRange(0, 2)] integerValue]];
+    //_regionCode = [NSNumber numberWithLong:[[ocatd substringWithRange:NSMakeRange(0, 2)] integerValue]];
 }
 
 @end

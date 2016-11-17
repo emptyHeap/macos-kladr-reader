@@ -9,6 +9,8 @@
 #import "KladrORM.h"
 #import "FMDB/FMDatabase.h"
 
+static NSUInteger const KladrORMCodeFieldLength = 13;
+
 @implementation KladrORM{
     FMDatabase *_db;
     NSOperationQueue *_dbOperationsQueue;
@@ -36,8 +38,8 @@
         FMResultSet *resultSet = [_db executeQuery:query];
         while([resultSet next]){
             [locations addObject:[[LocationType alloc] initWithId:[resultSet longForColumn:@"PKUID"]
-                                                     abbreviation:[resultSet stringForColumn:@"SOCRNAME"]
-                                                         fullName:[resultSet stringForColumn:@"SCNAME"]
+                                                     abbreviation:[resultSet stringForColumn:@"SCNAME"]
+                                                         fullName:[resultSet stringForColumn:@"SOCRNAME"]
                                                             level:[resultSet longForColumn:@"LEVEL"]
                                                              code:[resultSet stringForColumn:@"KOD_T_ST"]]];
         }
@@ -69,11 +71,42 @@
     }];
 }
 
+- (NSString *) repeatString:(NSString *)string times:(NSUInteger)times{
+    NSMutableString *generatedString = [[NSMutableString alloc] initWithCapacity:times * [string length]];
+    for (NSUInteger i = 0; i < times; i++){
+        [generatedString appendString:string];
+    }
+    return generatedString;
+}
+
+- (NSString *) selectorStringForElementsWithParentCode:(NSUInteger)parentCode inRange:(NSRange)parentRange{
+    NSString *field = @"\"CODE\"";
+    NSString *parentCup = [NSString stringWithFormat:@"1%@", [self repeatString:@"0" times:parentRange.length]];
+    NSString *parentFloor = [NSString stringWithFormat:@"1%@", [self repeatString:@"0" times:parentRange.location]];
+    NSString *notAParentObject = [NSString stringWithFormat:@"%@ %% %@ != 0", field, parentFloor];
+    
+    return [NSString stringWithFormat:@"(%@ / %@) %% %@ == %lu AND %@", field, parentFloor, parentCup, parentCode, notAParentObject];
+}
+
+- (NSString *) selectorStringForElementsWithParentCode:(NSUInteger)parentCode withParendRange:(NSRange)parentRange withSubclassCodeLength:(NSRange)childrenRange {
+    NSString *childrenFloor = [NSString stringWithFormat:@"1%@", [self repeatString:@"0" times:childrenRange.location]];
+    NSString *childrenCup = [NSString stringWithFormat:@"1%@", [self repeatString:@"0" times:childrenRange.location + childrenRange.length]];
+    
+    NSString *field = @"\"CODE\"";
+    
+    NSString *notLocalObject = [NSString stringWithFormat:@"%@ %% %@ == 0", field, childrenFloor];
+    NSString *isChildOfParent = [self selectorStringForElementsWithParentCode:parentCode inRange:parentRange];
+    return [NSString stringWithFormat:@"%@ AND %@ ", notLocalObject, isChildOfParent];
+}
+
 - (void) loadTownsOfRegion:(Region *)region forBlock:(void (^)(NSArray<Town *> *))townsHandler{
     [_dbOperationsQueue addOperationWithBlock:^{
         NSString *query = [NSString stringWithFormat:@"SELECT \"PKUID\", \"NAME\", \"SOCR\", \"CODE\", \"INDEX\", \"GNINMB\", \"OCATD\" "
                            @"FROM \"kladr_tbl\" "
-                           @"WHERE \"CODE\" %% 100000000000 != 0 AND \"OCATD\" / 1000000000 = %lu", region.regionCode];
+                           @"WHERE %@", [self selectorStringForElementsWithParentCode:region.regionCode
+                                                                      withParendRange:NSMakeRange(11, 2)
+                                                               withSubclassCodeLength:NSMakeRange(5, 6)]];
+                           //@"WHERE \"CODE\" %% 100000000000 != 0 AND \"CODE\" / 100000000000 = %lu", region.regionCode];
         NSMutableArray<Town *> *towns = [[NSMutableArray alloc] init];
         
         [_db open];
@@ -95,7 +128,13 @@
     [_dbOperationsQueue addOperationWithBlock:^{
         NSString *query = [NSString stringWithFormat:@"SELECT \"PKUID\", \"NAME\", \"SOCR\", \"CODE\", \"OCATD\" "
                            "FROM \"street_tbl\" "
-                           "WHERE \"OCATD\" = %@", town.ocatd];
+                           "WHERE %@ AND %@",
+                           [self selectorStringForElementsWithParentCode:town.regionCode
+                                                                 inRange:NSMakeRange(11 + 4, 2)],
+                           [self selectorStringForElementsWithParentCode:town.townCode
+                                                                     withParendRange:NSMakeRange(5 + 4, 6)
+                                                              withSubclassCodeLength:NSMakeRange(2, 7)]];
+                           //"WHERE \"CODE\" %% 100000000 != 0 AND \"CODE\" / 100000000 %% 1000 = %lu", town.townCode];
         NSMutableArray<Street *> *streets = [[NSMutableArray alloc] init];
         
         [_db open];
@@ -117,7 +156,14 @@
     [_dbOperationsQueue addOperationWithBlock:^{
         NSString *query = [NSString stringWithFormat:@"SELECT \"PKUID\", \"NAME\", \"SOCR\", \"CODE\", \"OCATD\" "
                            "FROM \"doma_tbl\" "
-                           "WHERE \"OCATD\" = %@", street.ocatd];
+                           "WHERE %@ AND %@ AND %@",
+                           [self selectorStringForElementsWithParentCode:street.streetCode
+                                                                 inRange:NSMakeRange(2 + 2, 7)],
+                           [self selectorStringForElementsWithParentCode:street.regionCode
+                                                                 inRange:NSMakeRange(11 + 4 + 2, 2)],
+                           [self selectorStringForElementsWithParentCode:street.townCode
+                                                                 inRange:NSMakeRange(5 + 4 + 2, 6)]];
+                           //"WHERE \"OCATD\" = %@", street.ocatd];
         NSMutableArray <House *> *houses = [[NSMutableArray alloc] init];
         
         [_db open];

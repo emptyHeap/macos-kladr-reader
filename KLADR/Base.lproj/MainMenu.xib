@@ -19,6 +19,7 @@
         </customObject>
         <viewController id="VcK-Aq-tzA" customClass="MainViewController">
             <connections>
+                <outlet property="dataView" destination="UJS-jQ-3W6" id="lOD-2M-JCy"/>
                 <outlet property="districtTextField" destination="YjJ-q2-UTc" id="ZeN-wR-YRZ"/>
                 <outlet property="houseTextField" destination="dZ3-yo-wfc" id="bkq-eK-qax"/>
                 <outlet property="streetTextField" destination="J9C-6P-1Fp" id="5N9-Px-QdQ"/>
@@ -691,14 +692,14 @@
         <window title="KLADR" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="618" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="771" height="338"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="618" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="771" height="338"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField identifier="district" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YjJ-q2-UTc" userLabel="District Text Field" customClass="DistrictTextField">
-                        <rect key="frame" x="20" y="318" width="240" height="22"/>
+                        <rect key="frame" x="20" y="296" width="240" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1o5-di-PWc">
                             <font key="font" metaFont="system"/>
@@ -710,7 +711,7 @@
                         </connections>
                     </textField>
                     <textField identifier="town" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trW-hc-nbq" userLabel="Town Text Field" customClass="TownTextField">
-                        <rect key="frame" x="20" y="286" width="240" height="22"/>
+                        <rect key="frame" x="20" y="264" width="240" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VhK-r1-3ur">
                             <font key="font" metaFont="system"/>
@@ -722,7 +723,7 @@
                         </connections>
                     </textField>
                     <textField identifier="street" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9C-6P-1Fp" userLabel="Street Text Field" customClass="StreetTextField">
-                        <rect key="frame" x="20" y="254" width="240" height="22"/>
+                        <rect key="frame" x="20" y="232" width="240" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="CZq-GU-GHg">
                             <font key="font" metaFont="system"/>
@@ -734,7 +735,7 @@
                         </connections>
                     </textField>
                     <textField identifier="house" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZ3-yo-wfc" userLabel="House Text View" customClass="HouseTextField">
-                        <rect key="frame" x="20" y="222" width="240" height="22"/>
+                        <rect key="frame" x="20" y="200" width="240" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="587-jr-JjT">
                             <font key="font" metaFont="system"/>
@@ -745,9 +746,24 @@
                             <outlet property="delegate" destination="VcK-Aq-tzA" id="GQn-8R-chs"/>
                         </connections>
                     </textField>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJS-jQ-3W6" customClass="KladrDataView">
+                        <rect key="frame" x="274" y="20" width="477" height="298"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOx-LN-enl">
+                        <rect key="frame" x="14" y="82" width="127" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="display data" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vga-Wa-L9v">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="displayData:" target="VcK-Aq-tzA" id="ZDa-85-VSW"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-56" y="439"/>
+            <point key="canvasLocation" x="20.5" y="428"/>
         </window>
     </objects>
 </document>

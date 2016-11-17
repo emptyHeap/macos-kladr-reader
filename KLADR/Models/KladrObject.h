@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, KladrRelevanceCode){
 //must be part of sortable implementation
 @property (nonatomic) NSInteger sortPriority;
 
-- (id) initWithId:(NSUInteger)pkuid
+- (instancetype) initWithId:(NSUInteger)pkuid
              name:(NSString *)name
              code:(NSString *)code
             ocatd:(NSString *)okatd

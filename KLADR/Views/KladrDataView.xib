@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="KladrDataViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="KladrDataView">
             <connections>
                 <outlet property="abbreviationTextField" destination="QhF-Px-teG" id="VRm-rU-Fl3"/>
                 <outlet property="codeTextField" destination="iN7-bE-Amf" id="zw6-C9-tzb"/>
@@ -16,7 +16,6 @@
                 <outlet property="relevanceTextField" destination="rNr-m3-oeC" id="1rR-4q-IJY"/>
                 <outlet property="streetTextField" destination="rAz-4f-ZLn" id="DJb-hB-W2S"/>
                 <outlet property="townTextField" destination="fSp-Sh-dEi" id="fXn-hJ-5qn"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>

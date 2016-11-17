@@ -21,6 +21,7 @@
     KladrIndex *_regions, *_towns, *_streets, *_houses;
     NSArray <LocationType *> *_locations;
     
+    KladrObject *_lastChanged;
     Region *_selectedRegion;
     Town *_selectedTown;
     Street *_selectedStreet;
@@ -84,31 +85,38 @@
     NSString *query = [obj.object stringValue];
     NSTextField *control = obj.object;
     
-    if (query != nil || [query isEqualToString:@""]){
+    if (query != nil && [query length] != 0){
     
         if (control == self.districtTextField){
             _selectedRegion = [_regions withName:control.stringValue];
+            _lastChanged = _selectedRegion;
             [_kladrDatabase loadTownsOfRegion:_selectedRegion forBlock:^(NSArray<Town *> *loadedTowns) {
                 _towns = [[KladrIndex alloc] init];
                 [_towns addKladrObjects:loadedTowns];
             }];
         } else if (control == self.townTextField) {
             _selectedTown = [_towns withName:control.stringValue];
+            _lastChanged = _selectedTown;
             [_kladrDatabase loadStreetsOfTown:_selectedTown forBlock:^(NSArray<Street *> *loadedStreets) {
                 _streets = [[KladrIndex alloc] init];
                 [_streets addKladrObjects:loadedStreets];
             }];
         } else if (control == self.streetTextField) {
             _selectedStreet = [_streets withName:control.stringValue];
+            _lastChanged = _selectedStreet;
             [_kladrDatabase loadHousesOfStreet:_selectedStreet forBlock:^(NSArray<House *> *loadedHouses) {
                 _houses = [[KladrIndex alloc] init];
                 [_houses addKladrObjects:loadedHouses];
             }];
         } else if (control == self.houseTextField) {
+            _lastChanged = [_houses withName:control.stringValue];
             // for what all that mess?
         }
         
+        [self displayData:nil];
     }
+    
+    
     
 //    if (control == self.districtTextField){
 //        [self clearSubs:self.townTextField];
@@ -127,6 +135,10 @@
         textField.stringValue = @"";
         [self controlTextDidEndEditing:[NSNotification notificationWithName:@"" object:textField]];
     }];
+}
+
+- (IBAction)displayData:(id)sender {
+    [_dataView printKladrObject:_lastChanged];
 }
 
 @end

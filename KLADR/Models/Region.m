@@ -17,7 +17,7 @@
 
 - (void) parseCode:(NSString *)code{
     [super parseCode:code];
-    _regionCode = (NSUInteger) [[code substringWithRange:RegionRegionCodeRange] integerValue];
+    _regionCode = (NSUInteger) [[code substringWithRange:RegionCodeRange] integerValue];
 }
 
 + (NSArray <NSString *> *) abbreviations{

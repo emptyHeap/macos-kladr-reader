@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "../Models/KladrObject.h"
+#import "CustomXibView.h"
 
-@interface KladrDataViewController : NSViewController
+#import "../Models/KladrModels.h"
+
+@interface KladrDataView : CustomXibView
 
 @property (weak) IBOutlet NSTextField *nameTextField;
 @property (weak) IBOutlet NSTextField *abbreviationTextField;
@@ -23,5 +25,7 @@
 @property (weak) IBOutlet NSTextField *relevanceTextField;
 
 @property (strong) KladrObject *representedObject;
+
+- (void) printKladrObject:(KladrObject *)kladrObject;
 
 @end

@@ -20,6 +20,7 @@
 @synthesize kladrDatabase = _kladrDatabase;
 
 - (id)init {
+    [self.window acceptsMouseMovedEvents];
     self = [super init];
     if (self){
         _kladrDatabase = [[KladrORM alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"kladr" ofType:@"sqlite"]];

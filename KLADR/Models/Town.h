@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "District.h"
 
-static NSRange const TownCodeRange = {5, 3};
+static NSRange const TownCodeRange = {2, 6};
 
 @interface Town : District <KladrAbbreviations>
 
