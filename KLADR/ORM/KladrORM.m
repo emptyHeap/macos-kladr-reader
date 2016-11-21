@@ -128,13 +128,13 @@ static NSUInteger const KladrORMCodeFieldLength = 13;
     [_dbOperationsQueue addOperationWithBlock:^{
         NSString *query = [NSString stringWithFormat:@"SELECT \"PKUID\", \"NAME\", \"SOCR\", \"CODE\", \"OCATD\" "
                            "FROM \"street_tbl\" "
-                           "WHERE %@ AND %@",
-                           [self selectorStringForElementsWithParentCode:town.regionCode
-                                                                 inRange:NSMakeRange(11 + 4, 2)],
-                           [self selectorStringForElementsWithParentCode:town.townCode
-                                                                     withParendRange:NSMakeRange(5 + 4, 6)
-                                                              withSubclassCodeLength:NSMakeRange(2, 7)]];
-                           //"WHERE \"CODE\" %% 100000000 != 0 AND \"CODE\" / 100000000 %% 1000 = %lu", town.townCode];
+//                           "WHERE %@ AND %@",
+//                           [self selectorStringForElementsWithParentCode:town.regionCode
+//                                                                 inRange:NSMakeRange(11 + 4, 2)],
+//                           [self selectorStringForElementsWithParentCode:town.townCode
+//                                                                     withParendRange:NSMakeRange(5 + 4, 6)
+//                                                              withSubclassCodeLength:NSMakeRange(2, 7)]];
+                           "WHERE \"CODE\" LIKE \"%@%%\"", [town.code substringToIndex:10]];
         NSMutableArray<Street *> *streets = [[NSMutableArray alloc] init];
         
         [_db open];
@@ -156,14 +156,14 @@ static NSUInteger const KladrORMCodeFieldLength = 13;
     [_dbOperationsQueue addOperationWithBlock:^{
         NSString *query = [NSString stringWithFormat:@"SELECT \"PKUID\", \"NAME\", \"SOCR\", \"CODE\", \"OCATD\" "
                            "FROM \"doma_tbl\" "
-                           "WHERE %@ AND %@ AND %@",
-                           [self selectorStringForElementsWithParentCode:street.streetCode
-                                                                 inRange:NSMakeRange(2 + 2, 7)],
-                           [self selectorStringForElementsWithParentCode:street.regionCode
-                                                                 inRange:NSMakeRange(11 + 4 + 2, 2)],
-                           [self selectorStringForElementsWithParentCode:street.townCode
-                                                                 inRange:NSMakeRange(5 + 4 + 2, 6)]];
-                           //"WHERE \"OCATD\" = %@", street.ocatd];
+//                           "WHERE %@ AND %@ AND %@",
+//                           [self selectorStringForElementsWithParentCode:street.streetCode
+//                                                                 inRange:NSMakeRange(2 + 2, 7)],
+//                           [self selectorStringForElementsWithParentCode:street.regionCode
+//                                                                 inRange:NSMakeRange(11 + 4 + 2, 2)],
+//                           [self selectorStringForElementsWithParentCode:street.townCode
+//                                                                 inRange:NSMakeRange(5 + 4 + 2, 6)]];
+                           "WHERE \"CODE\" LIKE \"%@%%\"", [street.code substringToIndex:14]];
         NSMutableArray <House *> *houses = [[NSMutableArray alloc] init];
         
         [_db open];
