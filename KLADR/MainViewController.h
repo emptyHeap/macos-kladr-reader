@@ -9,12 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import "Views/KladrDataView.h"
 
-@interface MainViewController : NSViewController <NSControlTextEditingDelegate>
+@interface MainViewController : NSViewController <NSControlTextEditingDelegate, NSComboBoxDataSource>
 
 @property (weak) IBOutlet NSTextField *districtTextField;
 @property (weak) IBOutlet NSTextField *townTextField;
 @property (weak) IBOutlet NSTextField *streetTextField;
 @property (weak) IBOutlet NSTextField *houseTextField;
 @property (weak) IBOutlet KladrDataView *dataView;
+@property (weak) IBOutlet NSComboBox *comboBox;
 
 @end

@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, KladrRelevanceCode){
 @interface KladrObject : NSObject
 
 @property (readonly) NSUInteger pkuid;
-@property (nonatomic, strong, readonly) NSString *name, *code, *ocatd;
+@property (nonatomic, strong, readonly) NSString *name, *code, *ocatd, *fullName;
 @property (readonly) NSNumber *postIndex, *taxServiceCode;
 @property (readonly) KladrRelevanceCode relevance;
 

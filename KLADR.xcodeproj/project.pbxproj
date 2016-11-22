@@ -26,6 +26,7 @@
 		0089225F1DC9F0A9008CC7A0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0089225E1DC9F0A9008CC7A0 /* MainViewController.m */; };
 		00A404A31DDB27BA00229051 /* KladrDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A404A11DDB27BA00229051 /* KladrDataView.m */; };
 		00A404A41DDB27BA00229051 /* KladrDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00A404A21DDB27BA00229051 /* KladrDataView.xib */; };
+		00B5F0891DE3028E0061B5FE /* KladrTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F0881DE3028E0061B5FE /* KladrTextField.m */; };
 		00D274281DDB14E9009A1DBA /* District.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D274271DDB14E8009A1DBA /* District.m */; };
 		00F4D9941DD207F2000BCCD5 /* DistrictTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4D9931DD207F2000BCCD5 /* DistrictTextField.m */; };
 		00F4D9971DD2080C000BCCD5 /* TownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4D9961DD2080C000BCCD5 /* TownTextField.m */; };
@@ -91,6 +92,8 @@
 		00A404A01DDB27BA00229051 /* KladrDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KladrDataView.h; path = Views/KladrDataView.h; sourceTree = "<group>"; };
 		00A404A11DDB27BA00229051 /* KladrDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KladrDataView.m; path = Views/KladrDataView.m; sourceTree = "<group>"; };
 		00A404A21DDB27BA00229051 /* KladrDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KladrDataView.xib; path = Views/KladrDataView.xib; sourceTree = "<group>"; };
+		00B5F0871DE3028E0061B5FE /* KladrTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KladrTextField.h; path = Models/KladrTextField.h; sourceTree = "<group>"; };
+		00B5F0881DE3028E0061B5FE /* KladrTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KladrTextField.m; path = Models/KladrTextField.m; sourceTree = "<group>"; };
 		00D274261DDB14E8009A1DBA /* District.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = District.h; path = Models/District.h; sourceTree = "<group>"; };
 		00D274271DDB14E8009A1DBA /* District.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = District.m; path = Models/District.m; sourceTree = "<group>"; };
 		00D2742C1DDB163F009A1DBA /* KladrObject+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KladrObject+Protected.h"; path = "Models/KladrObject+Protected.h"; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				00F4D9991DD2082A000BCCD5 /* StreetTextField.m */,
 				00F4D99B1DD20845000BCCD5 /* HouseTextField.h */,
 				00F4D99C1DD20845000BCCD5 /* HouseTextField.m */,
+				00B5F0871DE3028E0061B5FE /* KladrTextField.h */,
+				00B5F0881DE3028E0061B5FE /* KladrTextField.m */,
 			);
 			name = TextFields;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				00D274281DDB14E9009A1DBA /* District.m in Sources */,
 				00566FCB1DD7198D00BAF70E /* House.m in Sources */,
 				00566FD41DD7384100BAF70E /* KladrIndex.m in Sources */,
+				00B5F0891DE3028E0061B5FE /* KladrTextField.m in Sources */,
 				0089225F1DC9F0A9008CC7A0 /* MainViewController.m in Sources */,
 				008922321DC9E8CA008CC7A0 /* AppDelegate.m in Sources */,
 			);

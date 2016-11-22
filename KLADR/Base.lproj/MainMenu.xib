@@ -19,6 +19,7 @@
         </customObject>
         <viewController id="VcK-Aq-tzA" customClass="MainViewController">
             <connections>
+                <outlet property="comboBox" destination="wuG-Y0-boM" id="Rd7-rW-e2B"/>
                 <outlet property="dataView" destination="UJS-jQ-3W6" id="lOD-2M-JCy"/>
                 <outlet property="districtTextField" destination="YjJ-q2-UTc" id="ZeN-wR-YRZ"/>
                 <outlet property="houseTextField" destination="dZ3-yo-wfc" id="bkq-eK-qax"/>
@@ -761,6 +762,20 @@
                             <action selector="displayData:" target="VcK-Aq-tzA" id="ZDa-85-VSW"/>
                         </connections>
                     </button>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wuG-Y0-boM">
+                        <rect key="frame" x="20" y="162" width="243" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="JkO-Xf-dh5">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <objectValues>
+                                <string>Item 1</string>
+                                <string>Item 2</string>
+                                <string>Item 3</string>
+                            </objectValues>
+                        </comboBoxCell>
+                    </comboBox>
                 </subviews>
             </view>
             <point key="canvasLocation" x="20.5" y="428"/>

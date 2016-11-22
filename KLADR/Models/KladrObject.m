@@ -14,6 +14,7 @@
 @implementation KladrObject{
     NSUInteger _pkuid;
     NSString *_name;
+    NSString *_fullName;
     NSString *_code;
     NSString *_ocatd;
     LocationType *_locationType;
@@ -29,6 +30,7 @@
 @synthesize code = _code;
 @synthesize ocatd = _ocatd;
 @synthesize name = _name;
+@synthesize fullName = _fullName;
 @synthesize pkuid = _pkuid;
 @synthesize locationType = _locationType;
 @synthesize taxServiceCode = _taxServiceCode;
@@ -48,6 +50,8 @@
         _name = name;
         _locationType = locationType;
         _sortPriority = -1;
+        
+        _fullName = [NSString stringWithFormat:@"%@ %@", _name, _locationType.fullName];
         
         [self parseOcatd:ocatd];
         [self parseCode:code];

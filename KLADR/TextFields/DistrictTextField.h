@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KladrTextField.h"
 
-@interface DistrictTextField : NSTextField<NSTextFieldDelegate>
-
+@interface DistrictTextField : KladrTextField
 @end

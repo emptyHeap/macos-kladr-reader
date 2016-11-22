@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KladrTextField.h"
 
 @interface StreetTextField : NSTextField
 

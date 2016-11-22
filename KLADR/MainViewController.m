@@ -33,6 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _comboBox.usesDataSource = YES;
+    _comboBox.dataSource = self;
+    
     _regions = [[KladrIndex alloc] init];
     _towns = [[KladrIndex alloc] init];
     _streets = [[KladrIndex alloc] init];
@@ -93,6 +96,7 @@
             [_kladrDatabase loadTownsOfRegion:_selectedRegion forBlock:^(NSArray<Town *> *loadedTowns) {
                 _towns = [[KladrIndex alloc] init];
                 [_towns addKladrObjects:loadedTowns];
+                [_comboBox reloadData];
             }];
         } else if (control == self.townTextField) {
             _selectedTown = [_towns withName:control.stringValue];
@@ -139,6 +143,16 @@
 
 - (IBAction)displayData:(id)sender {
     [_dataView printKladrObject:_lastChanged];
+}
+
+// combo box datasource messing
+
+- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)comboBox{
+    return [[_regions objects] count];
+}
+
+- (id)comboBox:(NSComboBox *)comboBox objectValueForItemAtIndex:(NSInteger)index{
+    return [[[_regions objects] objectAtIndex:index] fullName];
 }
 
 @end
