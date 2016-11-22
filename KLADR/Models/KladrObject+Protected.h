@@ -12,5 +12,7 @@
 
 - (void) parseCode:(NSString *)code;
 - (void) parseOdatd:(NSString *)ocatd;
+- (void) setName:(NSString *)name;
+- (void) setLocation:(LocationType *)locationType;
 
 @end

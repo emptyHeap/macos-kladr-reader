@@ -59,6 +59,10 @@
     return self;
 }
 
+- (NSString *)getHumanReadableName{
+    return [NSString stringWithFormat:@"%@ %@", _name, _locationType.fullName];
+}
+
 - (void)parseOcatd:(NSString *)ocatd{
     //_regionCode = [NSNumber numberWithLong:[[ocatd substringWithRange:NSMakeRange(0, 2)] integerValue]];
 }
@@ -90,6 +94,14 @@
             _relevance = KladrRelevanceCodeNotExists;
             break;
     }
+}
+
+- (void) setName:(NSString *)name {
+    _name = name;
+}
+
+- (void) setLocation:(LocationType *)locationType {
+    _locationType = locationType;
 }
 
 @end

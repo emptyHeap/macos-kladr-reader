@@ -35,6 +35,8 @@ typedef NS_ENUM(NSUInteger, KladrRelevanceCode){
             ocatd:(NSString *)okatd
      locationType:(LocationType *)locationType;
 
+- (NSString *) getHumanReadableName;
+
 @end
 
 @protocol KladrAbbreviations

@@ -33,126 +33,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _comboBox.usesDataSource = YES;
-    _comboBox.dataSource = self;
+    //init stuff
+    AppDelegate *applicationDelegate = ((AppDelegate *)[[NSApplication sharedApplication] delegate]);
+    _kladrDatabase = applicationDelegate.kladrDatabase;
+    [_kladrDatabase loadLocationTypesForBlock:^(NSArray<LocationType *> *locations) {
+        _locations = locations;
+    }];
+    
+    //configure comboBoxes
+    [_kladrDatabase loadRegionsForBlock:^(NSArray<Region *> *regions) {
+        [_districtComboBox updateWithData:regions];
+    }];
+    _districtComboBox.child = _townComboBox;
+    
+    [_townComboBox setParentChangedBlock:^(KladrObject *region) {
+        [_dataView printKladrObject:region];
+        [_kladrDatabase loadTownsOfRegion:(Region *)region forBlock:^(NSArray<Town *> *loadedTowns) {
+            [_townComboBox updateWithData:loadedTowns];
+        }];
+    }];
+    _townComboBox.child = _streetComboBox;
+    
+    [_streetComboBox setParentChangedBlock:^(KladrObject *town) {
+        [_dataView printKladrObject:town];
+        [_kladrDatabase loadStreetsOfTown:(Town *)town forBlock:^(NSArray<Street *> *loadedStreets) {
+            [_streetComboBox updateWithData:loadedStreets];
+        }];
+    }];
+    _streetComboBox.child = _houseComboBox;
+
+    [_houseComboBox setParentChangedBlock:^(KladrObject *street) {
+        [_dataView printKladrObject:street];
+        [_kladrDatabase loadHousesOfStreet:(Street *)street forBlock:^(NSArray<House *> *loadedHouses) {
+            [_houseComboBox updateWithData:loadedHouses];
+        }];
+    }];
     
     _regions = [[KladrIndex alloc] init];
     _towns = [[KladrIndex alloc] init];
     _streets = [[KladrIndex alloc] init];
     _houses = [[KladrIndex alloc] init];
-    
-    AppDelegate *applicationDelegate = ((AppDelegate *)[[NSApplication sharedApplication] delegate]);
-    _kladrDatabase = applicationDelegate.kladrDatabase;
-    
-    [_kladrDatabase loadLocationTypesForBlock:^(NSArray<LocationType *> *locations) {
-        _locations = locations;
-    }];
-    [_kladrDatabase loadRegionsForBlock:^(NSArray<Region *> *regions) {
-        [_regions addKladrObjects:regions];
-    }];
-}
-
-- (NSArray<NSString *> *)control:(NSControl *)control textView:(NSTextView *)textView completions:(NSArray<NSString *> *)words forPartialWordRange:(NSRange)charRange indexOfSelectedItem:(NSInteger *)index{
-
-    
-    if (![_kladrDatabase operationsFinished]){
-        [_kladrDatabase executeInMainQueueAfterOperationsBlock:^{
-            [[control currentEditor] complete:control];
-        }];
-        
-        //prevent autocomplete for now
-        return nil;
-    } else {
-        NSArray<KladrObject *> *variants;
-        NSString *query = [textView string];
-        NSMutableArray <NSString *> *stringResult = [[NSMutableArray alloc] init];
-        
-        if (control == self.districtTextField)
-            variants = [_regions searchWithName:query];
-        else if (control == self.townTextField)
-            variants = [_towns searchWithName:query];
-        else if (control == self.streetTextField)
-            variants = [_streets searchWithName:query];
-        else if (control == self.houseTextField)
-            variants = [_houses searchWithName:query];
-        for (KladrObject *variant in variants) {
-            [stringResult addObject:variant.name];
-        }
-        
-        return stringResult;
-    }
-}
-
-- (void)controlTextDidEndEditing:(NSNotification *)obj{
-
-    NSString *query = [obj.object stringValue];
-    NSTextField *control = obj.object;
-    
-    if (query != nil && [query length] != 0){
-    
-        if (control == self.districtTextField){
-            _selectedRegion = [_regions withName:control.stringValue];
-            _lastChanged = _selectedRegion;
-            [_kladrDatabase loadTownsOfRegion:_selectedRegion forBlock:^(NSArray<Town *> *loadedTowns) {
-                _towns = [[KladrIndex alloc] init];
-                [_towns addKladrObjects:loadedTowns];
-                [_comboBox reloadData];
-            }];
-        } else if (control == self.townTextField) {
-            _selectedTown = [_towns withName:control.stringValue];
-            _lastChanged = _selectedTown;
-            [_kladrDatabase loadStreetsOfTown:_selectedTown forBlock:^(NSArray<Street *> *loadedStreets) {
-                _streets = [[KladrIndex alloc] init];
-                [_streets addKladrObjects:loadedStreets];
-            }];
-        } else if (control == self.streetTextField) {
-            _selectedStreet = [_streets withName:control.stringValue];
-            _lastChanged = _selectedStreet;
-            [_kladrDatabase loadHousesOfStreet:_selectedStreet forBlock:^(NSArray<House *> *loadedHouses) {
-                _houses = [[KladrIndex alloc] init];
-                [_houses addKladrObjects:loadedHouses];
-            }];
-        } else if (control == self.houseTextField) {
-            _lastChanged = [_houses withName:control.stringValue];
-            // for what all that mess?
-        }
-        
-        [self displayData:nil];
-    }
-    
-    
-    
-//    if (control == self.districtTextField){
-//        [self clearSubs:self.townTextField];
-//    } else if (control == self.townTextField) {
-//        [self clearSubs:self.streetTextField];
-//    } else if (control == self.streetTextField) {
-//         [self clearSubs:self.houseTextField];
-//    } else if (control == self.houseTextField) {
-//         // no subs
-//    }
-
-}
-
-- (void) clearSubs:(NSTextField *)textField {
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        textField.stringValue = @"";
-        [self controlTextDidEndEditing:[NSNotification notificationWithName:@"" object:textField]];
-    }];
-}
-
-- (IBAction)displayData:(id)sender {
-    [_dataView printKladrObject:_lastChanged];
-}
-
-// combo box datasource messing
-
-- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)comboBox{
-    return [[_regions objects] count];
-}
-
-- (id)comboBox:(NSComboBox *)comboBox objectValueForItemAtIndex:(NSInteger)index{
-    return [[[_regions objects] objectAtIndex:index] fullName];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0014CCA71DCA081700FA7DB1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */; };
+		0042CD221DE42F6C00E1ED10 /* AsyncKladrComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042CD211DE42F6C00E1ED10 /* AsyncKladrComboBox.m */; };
 		00566FBD1DD718CD00BAF70E /* KladrORM.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566FBC1DD718CD00BAF70E /* KladrORM.m */; };
 		00566FCB1DD7198D00BAF70E /* House.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566FBF1DD7198D00BAF70E /* House.m */; };
 		00566FCC1DD7198D00BAF70E /* KladrObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566FC21DD7198D00BAF70E /* KladrObject.m */; };
@@ -55,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		0014CCA61DCA081700FA7DB1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		0042CD201DE42F6C00E1ED10 /* AsyncKladrComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncKladrComboBox.h; path = Views/Elements/AsyncKladrComboBox.h; sourceTree = "<group>"; };
+		0042CD211DE42F6C00E1ED10 /* AsyncKladrComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncKladrComboBox.m; path = Views/Elements/AsyncKladrComboBox.m; sourceTree = "<group>"; };
 		00501BE21DD37A040021A3C5 /* KLADR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KLADR.entitlements; sourceTree = "<group>"; };
 		00566FBB1DD718CD00BAF70E /* KladrORM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KladrORM.h; path = KLADR/ORM/KladrORM.h; sourceTree = "<group>"; };
 		00566FBC1DD718CD00BAF70E /* KladrORM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KladrORM.m; path = KLADR/ORM/KladrORM.m; sourceTree = "<group>"; };
@@ -171,6 +174,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		0042CD1C1DE42ED900E1ED10 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				0042CD201DE42F6C00E1ED10 /* AsyncKladrComboBox.h */,
+				0042CD211DE42F6C00E1ED10 /* AsyncKladrComboBox.m */,
+			);
+			name = Elements;
+			sourceTree = "<group>";
+		};
 		00566FBA1DD718A300BAF70E /* ORM */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +275,7 @@
 		00A4049F1DDB277E00229051 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0042CD1C1DE42ED900E1ED10 /* Elements */,
 				00A404A01DDB27BA00229051 /* KladrDataView.h */,
 				00A404A11DDB27BA00229051 /* KladrDataView.m */,
 				00A404A21DDB27BA00229051 /* KladrDataView.xib */,
@@ -489,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A404A31DDB27BA00229051 /* KladrDataView.m in Sources */,
+				0042CD221DE42F6C00E1ED10 /* AsyncKladrComboBox.m in Sources */,
 				00566FBD1DD718CD00BAF70E /* KladrORM.m in Sources */,
 				008922351DC9E8CA008CC7A0 /* main.m in Sources */,
 				00FA36201DDC66D800D47F71 /* CustomXibView.m in Sources */,
