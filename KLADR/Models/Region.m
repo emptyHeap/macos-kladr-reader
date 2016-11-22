@@ -7,8 +7,18 @@
 //
 
 #import "Region.h"
+#import "KladrObject+Protected.h"
 
-@implementation Region
+@implementation Region{
+    NSUInteger _regionCode;
+}
+
+@synthesize regionCode = _regionCode;
+
+- (void) parseCode:(NSString *)code{
+    [super parseCode:code];
+    _regionCode = (NSUInteger) [[code substringWithRange:RegionCodeRange] integerValue];
+}
 
 + (NSArray <NSString *> *) abbreviations{
     return @[@"АО", @"Аобл", @"Респ", @"Чувашия", @"а.обл.", @"о.окр", @"г.ф.з", @"обл", @"обл.", @"округ", @"респ.", @"АО"];

@@ -89,5 +89,9 @@ static NSArray <NSMutableArray <LocationType *> *> *LevelIndex;
     return LevelIndex[level];
 }
 
++ (NSArray<LocationType *> *)allTypes{
+    return [AbbreviationIndex allValues];
+}
+
 @end
 

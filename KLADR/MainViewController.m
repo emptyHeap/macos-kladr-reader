@@ -1,74 +1,78 @@
 //
 //  MainViewController.m
-//  KLADR
+//  Kladr
 //
 //  Created by Konstantin on 02/11/16.
 //  Copyright © 2016 Konstantin. All rights reserved.
 //
 
 #import "MainViewController.h"
-#import "KLADRModels.h"
-#import "DataHandler.h"
+
+#import "Models/KladrModels.h"
+#import "AppDelegate.h"
+#import "ORM/KladrORM.h"
 
 @interface MainViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+    
+    KladrIndex *_regions, *_towns, *_streets, *_houses;
+    NSArray <LocationType *> *_locations;
+    
+    KladrObject *_lastChanged;
+    Region *_selectedRegion;
+    Town *_selectedTown;
+    Street *_selectedStreet;
+    House *_selectedHouse;
+    
+    KladrORM *_kladrDatabase;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
-}
-
-- (NSArray<NSString *> *)control:(NSControl *)control textView:(NSTextView *)textView completions:(NSArray<NSString *> *)words forPartialWordRange:(NSRange)charRange indexOfSelectedItem:(NSInteger *)index{
-
     
-    if ([[DataHandler dbOperationsQueue] operationCount] > 0){
-        [[DataHandler dbOperationsQueue] addOperationWithBlock:^{
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [[control currentEditor] complete:control];
-            }];
+    //init stuff
+    AppDelegate *applicationDelegate = ((AppDelegate *)[[NSApplication sharedApplication] delegate]);
+    _kladrDatabase = applicationDelegate.kladrDatabase;
+    [_kladrDatabase loadLocationTypesForBlock:^(NSArray<LocationType *> *locations) {
+        _locations = locations;
+    }];
+    
+    //configure comboBoxes
+    [_kladrDatabase loadRegionsForBlock:^(NSArray<Region *> *regions) {
+        [_districtComboBox updateWithData:regions];
+    }];
+    _districtComboBox.child = _townComboBox;
+    
+    [_townComboBox setParentChangedBlock:^(KladrObject *region) {
+        [_dataView printKladrObject:region];
+        [_kladrDatabase loadTownsOfRegion:(Region *)region forBlock:^(NSArray<Town *> *loadedTowns) {
+            [_townComboBox updateWithData:loadedTowns];
         }];
-        return nil;
-    } else {
-        NSArray<KLADRObject *> *variants;
-        NSString *query = [textView string];
-        NSMutableArray <NSString *> *stringResult = [[NSMutableArray alloc] init];
-        
-        if (control == self.districtTextField)
-            variants = [Region searchWithName:query];
-        else if (control == self.townTextField)
-            variants = [Town searchWithName:query];
-        else if (control == self.streetTextField)
-            variants = [Street searchWithName:query];
-        else if (control == self.houseTextField)
-            variants = [House searchWithName:query];
-        for (KLADRObject *variant in variants) {
-            [stringResult addObject:variant.name];
-        }
-        
-        return stringResult;
-    }
-}
-
-- (void)controlTextDidEndEditing:(NSNotification *)obj{
-
-    NSString *query = [obj.object stringValue];
-    if (query != nil && ![query isEqualToString:@""]){
+    }];
+    _townComboBox.child = _streetComboBox;
     
-        NSTextField *control = obj.object;
-        if (control == self.districtTextField){
-            [DataHandler loadTownsForRegion:[Region withName:query]];
-        } else if (control == self.townTextField) {
-            [DataHandler loadStreetsForTown:[Town withName:query]];
-        } else if (control == self.streetTextField) {
-            [DataHandler loadHousesForStreet:[Street withName:query]];
-        } else if (control == self.houseTextField) {
-            // for what all that mess?
-        }
-    }
+    [_streetComboBox setParentChangedBlock:^(KladrObject *town) {
+        [_dataView printKladrObject:town];
+        [_kladrDatabase loadStreetsOfTown:(Town *)town forBlock:^(NSArray<Street *> *loadedStreets) {
+            [_streetComboBox updateWithData:loadedStreets];
+        }];
+    }];
+    _streetComboBox.child = _houseComboBox;
+
+    [_houseComboBox setParentChangedBlock:^(KladrObject *street) {
+        [_dataView printKladrObject:street];
+        [_kladrDatabase loadHousesOfStreet:(Street *)street forBlock:^(NSArray<House *> *loadedHouses) {
+            [_houseComboBox updateWithData:loadedHouses];
+        }];
+    }];
     
+    _regions = [[KladrIndex alloc] init];
+    _towns = [[KladrIndex alloc] init];
+    _streets = [[KladrIndex alloc] init];
+    _houses = [[KladrIndex alloc] init];
 }
 
 @end

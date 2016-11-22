@@ -6,14 +6,14 @@
 //  Copyright © 2016 Konstantin. All rights reserved.
 //
 
-#import "KLADRIndex.h"
-#import "KLADRObject.h"
+#import "KladrIndex.h"
+#import "KladrObject.h"
 
-@implementation KLADRIndex{
-    NSMutableDictionary <NSString *, KLADRObject *> *_nameIndex, *_codeIndex;
-    NSMutableDictionary <NSNumber *, KLADRObject *> *_pkuidIndex;
-    NSMutableDictionary <LocationType *, NSMutableArray<KLADRObject *> *> *_locationTypeIndex;
-    KLADRObject *_selected;
+@implementation KladrIndex{
+    NSMutableDictionary <NSString *, KladrObject *> *_nameIndex, *_codeIndex;
+    NSMutableDictionary <NSNumber *, KladrObject *> *_pkuidIndex;
+    NSMutableDictionary <LocationType *, NSMutableArray<KladrObject *> *> *_locationTypeIndex;
+    KladrObject *_selected;
 }
 
 - (id) init {
@@ -24,35 +24,34 @@
         _pkuidIndex = [[NSMutableDictionary alloc] init];
         _locationTypeIndex = [[NSMutableDictionary alloc] init];
     }
-    NSLog(@"%@ alloc", self);
     return self;
 }
 
-- (void) addKLADRObject:(KLADRObject *)kladrObject{
+- (void) addKladrObject:(KladrObject *)kladrObject{
     _pkuidIndex[[NSNumber numberWithUnsignedInteger:kladrObject.pkuid]] = kladrObject;
     _nameIndex[kladrObject.name] = kladrObject;
     _codeIndex[kladrObject.code] = kladrObject;
 }
 
-- (void) addKLADRObjects:(NSArray<KLADRObject *> *)kladrObjects{
-    for (KLADRObject *object in kladrObjects){
-        [self addKLADRObject:object];
+- (void) addKladrObjects:(NSArray<KladrObject *> *)kladrObjects{
+    for (KladrObject *object in kladrObjects){
+        [self addKladrObject:object];
     }
 }
 
-- (KLADRObject *)withCode:(NSString *)code{
+- (KladrObject *)withCode:(NSString *)code{
     return _codeIndex[code];
 }
 
-- (KLADRObject *)withName:(NSString *)name{
+- (KladrObject *)withName:(NSString *)name{
     return _nameIndex[name];
 }
 
-- (KLADRObject *)withPkuid:(NSUInteger)pkuid{
+- (KladrObject *)withPkuid:(NSUInteger)pkuid{
     return _pkuidIndex[[NSNumber numberWithUnsignedInteger:pkuid]];
 }
 
-- (NSArray<KLADRObject *> *)withLocationType:(LocationType *)locationType{
+- (NSArray<KladrObject *> *)withLocationType:(LocationType *)locationType{
     return _locationTypeIndex[locationType];
 }
 
@@ -60,7 +59,7 @@
     return [_nameIndex allKeys];
 }
 
-- (NSArray<KLADRObject *> *)objects{
+- (NSArray<KladrObject *> *)objects{
     return [_nameIndex allValues];
 }
 
@@ -70,7 +69,7 @@
         return self.objects;
     }
     
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(KLADRObject *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(KladrObject *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
         evaluatedObject.sortPriority = [evaluatedObject.name rangeOfString:string].location;
         
         if ( evaluatedObject.sortPriority == NSNotFound ){

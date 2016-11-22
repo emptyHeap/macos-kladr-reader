@@ -27,5 +27,6 @@
 + (id) withCode:(NSString *)code;
 + (id) withPkuid:(NSUInteger)pkuid;
 + (NSArray <LocationType *> *) typesWithLevel:(NSUInteger)level;
++ (NSArray <LocationType *> *) allTypes;
 
 @end

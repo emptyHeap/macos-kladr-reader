@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
@@ -19,10 +19,12 @@
         </customObject>
         <viewController id="VcK-Aq-tzA" customClass="MainViewController">
             <connections>
-                <outlet property="districtTextField" destination="YjJ-q2-UTc" id="ZeN-wR-YRZ"/>
-                <outlet property="houseTextField" destination="dZ3-yo-wfc" id="bkq-eK-qax"/>
-                <outlet property="streetTextField" destination="J9C-6P-1Fp" id="5N9-Px-QdQ"/>
-                <outlet property="townTextField" destination="trW-hc-nbq" id="xOg-hG-VMb"/>
+                <outlet property="dataView" destination="UJS-jQ-3W6" id="lOD-2M-JCy"/>
+                <outlet property="districtComboBox" destination="wuG-Y0-boM" id="tS6-g1-Kbc"/>
+                <outlet property="houseComboBox" destination="Bk7-61-l5O" id="yB1-9d-M2B"/>
+                <outlet property="streetComboBox" destination="XRd-7c-eSm" id="iSE-wR-Vv2"/>
+                <outlet property="townComboBox" destination="rh2-SJ-wa9" id="Jed-Mx-FAg"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="5AK-in-EVs"/>
             </connections>
         </viewController>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -690,62 +692,75 @@
         <window title="KLADR" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="771" height="392"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="771" height="392"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField identifier="district" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YjJ-q2-UTc" userLabel="District Text Field" customClass="DistrictTextField">
-                        <rect key="frame" x="20" y="318" width="240" height="22"/>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJS-jQ-3W6" customClass="KladrDataView">
+                        <rect key="frame" x="274" y="74" width="477" height="298"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1o5-di-PWc">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="delegate" destination="VcK-Aq-tzA" id="jDu-fQ-fZd"/>
-                        </connections>
-                    </textField>
-                    <textField identifier="town" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trW-hc-nbq" userLabel="Town Text Field" customClass="TownTextField">
-                        <rect key="frame" x="20" y="286" width="240" height="22"/>
+                    </customView>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wuG-Y0-boM" userLabel="District Combo Box" customClass="AsyncKladrComboBox">
+                        <rect key="frame" x="20" y="348" width="243" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VhK-r1-3ur">
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="5" id="JkO-Xf-dh5">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="delegate" destination="VcK-Aq-tzA" id="EC6-qd-EtK"/>
-                        </connections>
-                    </textField>
-                    <textField identifier="street" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9C-6P-1Fp" userLabel="Street Text Field" customClass="StreetTextField">
-                        <rect key="frame" x="20" y="254" width="240" height="22"/>
+                            <objectValues>
+                                <string>Item 1</string>
+                                <string>Item 2</string>
+                                <string>Item 3</string>
+                            </objectValues>
+                        </comboBoxCell>
+                    </comboBox>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rh2-SJ-wa9" userLabel="Town Combo Box" customClass="AsyncKladrComboBox">
+                        <rect key="frame" x="20" y="320" width="243" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="CZq-GU-GHg">
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="6AS-dg-vJW">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="delegate" destination="VcK-Aq-tzA" id="qcV-d1-agN"/>
-                        </connections>
-                    </textField>
-                    <textField identifier="house" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZ3-yo-wfc" userLabel="House Text View" customClass="HouseTextField">
-                        <rect key="frame" x="20" y="222" width="240" height="22"/>
+                            <objectValues>
+                                <string>Item 1</string>
+                                <string>Item 2</string>
+                                <string>Item 3</string>
+                            </objectValues>
+                        </comboBoxCell>
+                    </comboBox>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRd-7c-eSm" userLabel="Street Combo Box" customClass="AsyncKladrComboBox">
+                        <rect key="frame" x="20" y="292" width="243" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="587-jr-JjT">
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="fcf-nA-vHI">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="delegate" destination="VcK-Aq-tzA" id="GQn-8R-chs"/>
-                        </connections>
-                    </textField>
+                            <objectValues>
+                                <string>Item 1</string>
+                                <string>Item 2</string>
+                                <string>Item 3</string>
+                            </objectValues>
+                        </comboBoxCell>
+                    </comboBox>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bk7-61-l5O" userLabel="House Combo Box" customClass="AsyncKladrComboBox">
+                        <rect key="frame" x="20" y="264" width="243" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Vny-a7-pCu">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <objectValues>
+                                <string>Item 1</string>
+                                <string>Item 2</string>
+                                <string>Item 3</string>
+                            </objectValues>
+                        </comboBoxCell>
+                    </comboBox>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="20.5" y="455"/>
         </window>
     </objects>
 </document>

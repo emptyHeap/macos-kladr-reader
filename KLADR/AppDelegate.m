@@ -7,18 +7,29 @@
 //
 
 #import "AppDelegate.h"
-#import "DataHandler.h"
 
 @interface AppDelegate ()
 
 @property (assign) IBOutlet NSWindow *window;
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    KladrORM *_kladrDatabase;
+}
+
+@synthesize kladrDatabase = _kladrDatabase;
+
+- (id)init {
+    [self.window acceptsMouseMovedEvents];
+    self = [super init];
+    if (self){
+        _kladrDatabase = [[KladrORM alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"kladr" ofType:@"sqlite"]];
+    }
+    return self;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    [DataHandler preload];
 }
 
 

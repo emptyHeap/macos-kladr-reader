@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Region.h"
+#import "District.h"
 
-@interface Town : Region <KLADRAbbreviations>
+static NSRange const TownCodeRange = {2, 6};
+
+@interface Town : District <KladrAbbreviations>
+
+@property (readonly) NSUInteger townCode;
 
 @end

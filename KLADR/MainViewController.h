@@ -7,12 +7,19 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Views/KladrDataView.h"
+#import "Views/Elements/AsyncKladrComboBox.h"
 
-@interface MainViewController : NSViewController <NSControlTextEditingDelegate>
+@interface MainViewController : NSViewController
 
-@property (weak) IBOutlet NSTextField *districtTextField;
-@property (weak) IBOutlet NSTextField *townTextField;
-@property (weak) IBOutlet NSTextField *streetTextField;
-@property (weak) IBOutlet NSTextField *houseTextField;
+// text fields implementation
+@property (weak) IBOutlet KladrDataView *dataView;
+
+
+// combo box implementation
+@property (weak) IBOutlet AsyncKladrComboBox *districtComboBox;
+@property (weak) IBOutlet AsyncKladrComboBox *townComboBox;
+@property (weak) IBOutlet AsyncKladrComboBox *streetComboBox;
+@property (weak) IBOutlet AsyncKladrComboBox *houseComboBox;
 
 @end
